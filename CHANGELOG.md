@@ -8,6 +8,7 @@
     * Letterboxd
     * Pinboard
     * Keybase
+* Verified link instructions in README
 
 ## Version 0.0.2 
 
