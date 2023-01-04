@@ -69,6 +69,8 @@ Get **verified** links by adding `rel="me"` to your anchor tags in `layout/socia
 
 ← `assets`: Add images here and copy the links into `settings.json` to show them in your site.
 
+_Last updated: 4 Jan 2023_
+
 ![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
 
 ## You built this with Glitch!
