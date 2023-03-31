@@ -1,44 +1,30 @@
 {
-  "name": "glitch-in-bio",
-  "version": "0.0.3",
-  "description": "Your very own link-in-bio app.",
-  "main": "index.html",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "release": "auto shipit"
+  "name": "compute-starter-kit-javascript-default",
+  "version": "0.4.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastly/compute-starter-kit-javascript-default.git"
+  },
+  "author": "oss@fastly.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastly/compute-starter-kit-javascript-default/issues"
+  },
+  "homepage": "https://developer.fastly.com/solutions/starters/compute-starter-kit-javascript-default",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@fastly/js-compute": "^1.5.1"
   },
   "devDependencies": {
-    "@auto-it/all-contributors": "^10.32.2",
-    "@auto-it/first-time-contributor": "^10.32.2",
-    "@auto-it/git-tag": "^10.32.3",
-    "@auto-it/released": "^10.32.2",
-    "@glitchdotcom/vite-plugin-handlebars": "^1.6.2",
-    "auto": "^10.32.2",
-    "vite": "^4.0.0"
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead"
-  ],
-  "engines": {
-    "node": "14.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-in-bio"
-  },
-  "glitch": {
-    "projectType": "generated_static"
-  },
-  "author": "Keith Kurson <keith@glitch.com>",
-  "auto": {
-    "plugins": [
-      "all-contributors",
-      "first-time-contributor",
-      "released",
-      "git-tag"
-    ],
-    "onlyPublishWithReleaseLabel": true
+  "scripts": {
+    "prebuild": "webpack",
+    "build": "js-compute-runtime bin/index.js bin/main.wasm",
+    "deploy": "fastly compute publish"
   }
 }
