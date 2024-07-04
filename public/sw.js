@@ -11,12 +11,12 @@ self.addEventListener("install", e => {
     caches.open("glitch-in-bio-pwa").then(cache => {
       // Cache the homepage and stylesheets - add any assets you want to cache!
       return cache.addAll([
-        "public/", 
-        "public/styles/style.css",
-        "public/styles/themes/glitch.css",
-        "public/styles/themes/gallery.css",
-        "public/styles/themes/menu.css",
-        "public/styles/themes/custom-theme.css"
+        "/", 
+        "/styles/style.css",
+        "/styles/themes/glitch.css",
+        "/styles/themes/gallery.css",
+        "/styles/themes/menu.css",
+        "/styles/themes/custom-theme.css"
       ]);
     })
   );
