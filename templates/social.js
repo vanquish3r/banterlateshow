@@ -31,6 +31,7 @@ function renderEmail() {
 }
 
 const socials = [
+  { name: "youtube", altText: "YouTube" },
   { name: "glitch", altText: "Glitch" },
   { name: "arena", altText: "Arena" },
   { name: "bandcamp", altText: "Bandcamp" },
@@ -42,6 +43,7 @@ const socials = [
   { name: "hasnode", altText: "Hasnode" },
   { name: "instagram", altText: "Instagram" },
   { name: "keybase", altText: "Keybase" },
+  { name: "paypal", altText: "PayPal" }, 
   { name: "kofi", altText: "Ko-fi" },
   { name: "letterboxd", altText: "Letterboxd" },
   { name: "linkedin", altText: "LinkedIn" },
@@ -59,8 +61,7 @@ const socials = [
   { name: "tiktok", altText: "TikTok" },
   { name: "twitch", altText: "Twitch" },
   { name: "twitter", altText: "Twitter" },
-  { name: "tumblr", altText: "Tumblr" },
-  { name: "youtube", altText: "YouTube" }
+  { name: "tumblr", altText: "Tumblr" }
 ];
 
 export const renderSocialIcons = html.node`

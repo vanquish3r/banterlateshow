@@ -5,9 +5,12 @@ Edit / copy or create your own CSS file in public/styles/themes
 Select your chosen CSS by adding the theme name (e.g. glitch) in settings.json
 ******************************************************************************/
 
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap");
+
 /* Fonts */
 @font-face {
   font-family: HK Grotesk;
+  font-weight: bold;
   src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
     format("opentype");
 }
@@ -22,14 +25,14 @@ Select your chosen CSS by adding the theme name (e.g. glitch) in settings.json
   --color-bg: #9480FF;
   --color-bg-alt: #D7F5EF;
   --color-text-main: #000000;
-  --color-primary: #AFECE0;
+  --color-primary: #26deff;
   --theme-color-title: #FFFFFF;
   --font-family: "HK Grotesk";
   --font-family-header: "HK Grotesk";
   --font-family-list: Menlo, Consolas, Monaco, "Lucida Console", monospace;
 }
 body {
-  background: fixed linear-gradient(0deg, #D7F5EF, #9480FF);
+  background: fixed linear-gradient(0deg, #071775, #ff4cad);
 }
 
 ul.link-list li a {
@@ -53,5 +56,10 @@ ul.link-list li a img {
   fill: var(--color-bg);
 }
 h1 {
-  color: var(--theme-color-title);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.8rem;
+  position: center;
+  font-weight: bold;
+  color: #E8E6E3;
+  text-transform: uppercase;
 }
