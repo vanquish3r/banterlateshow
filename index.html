@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>The Banter Late Show</title>
     <link rel="icon" href="https://banterlateshow.com/images/logo-bls.png" />
@@ -30,14 +29,12 @@
   gtag('config', 'G-LHD80JCXPK');
 </script>
 
-    <div style="display:none;">
     <script>
      window.loadDoneCallback = ()=>{
         movePlayer({x: 0, y: 0.01, z: 0});
      };
     </script>
     <script src="./bullshcript.js"></script>
-    </div>
 
     <style>
       body {
@@ -148,7 +145,7 @@
     </style>
   </head>
 
-  <body class="white">
+  <body>
 
     <div style="display: none;"> <!-- this is a hidden div on the website, this is ignored by Banter but hides the scene on the 2D page -->
     <a-scene sq-assetbundle="android: https://banterlateshow.com/assetbundle/bls_v201canada_android?1; 
@@ -310,8 +307,8 @@
             
             <!-- Placeholder Button -->
             <a-plane position="0.68 -0.27 0" opacity="1.0" width="0.2" height="0.08" class="buttons"
-            click-url="url: https://bantervr.com/events"    color="#000000" sq-collider sq-interactable >
-            <a-text value="Banter Events" position="0 0 0.01" align="center" scale="0.11 0.11 0.11" color="#FFFFFF"></a-text></a-plane>
+            click-url="url: https://banterlateshow.com"    color="#000000" sq-collider sq-interactable >
+            <a-text value="BLS Website" position="0 0 0.01" align="center" scale="0.11 0.11 0.11" color="#FFFFFF"></a-text></a-plane>
         </a-entity>
       
     </a-scene>
