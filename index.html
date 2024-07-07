@@ -150,14 +150,14 @@
 
   <body class="white">
 
-<div style="display:none;">
+    <div style="display: none;"> <!-- this is a hidden div on the website, this is ignored by Banter but hides the scene on the 2D page -->
     <a-scene sq-assetbundle="android: https://033607.bant.ing/android.banter; 
-                             desktop: https://033607.bant.ing/windows.banter" 
+                             desktop: https://033607.bant.ing/windows.banter;" 
 
-                             sq-kitbundle="android: https://github.com/vanquish3r/banterlateshow/raw/main/kitbundle/screens_kitbundle_android?0; 
-                           desktop: https://github.com/vanquish3r/banterlateshow/raw/main/kitbundle/screens_kitbundle_standalonewindows?0"
+                             sq-kitbundle="android: https://banterlateshow.com/kitbundle/screens_kitbundle_android?0; 
+                           desktop: https://banterlateshow.com/kitbundle/screens_kitbundle_standalonewindows?0;"
                            
-             sq-refreshrate="rate:72" sq-spawnpoint="position: 0 0.01 0 0;" sq-clippingplane="near: 0.05; far: 500;" sq-friendpositionjoinallowed="enabled: false" sq-disableteleport sq-devtoolsenabled="enabled: false" sq-maxoccupancy="number: 40" embedded>
+             sq-refreshrate="rate:72" sq-spawnpoint="position: 0 0.01 0 0;" sq-clippingplane="near: 0.05; far: 500;" sq-friendpositionjoinallowed="enabled: false" sq-disableteleport sq-devtoolsenabled="enabled: false" sq-maxoccupancy="number: 40" embedded> <!-- the embedded property stops the scene from taking up the whole page and allows the 2D page to be scrollable -->
 <!-- live stream sign -->
 <a-entity sq-generatemipmaps sq-boxcollider="size: 1.387 1.6 0.047; center: 0 -0.9 0" scale="1.2 1.2 1.2" position="-1.62 2.8 -1" rotation="0 5 0" 
     gltf-model="https://cdn.glitch.global/8eafb3c3-a848-4d92-b3d8-9358ab99edf9/stremingsign_scifi.glb?v=1719481167296"></a-entity>      
@@ -301,7 +301,7 @@
             
             <!-- Show Notes Button -->
             <a-plane position="0.68 0.28 0" opacity="1.0" width="0.20" height="0.08" class="buttons"
-            click-url="url: https://late-show.glitch.me/shownotes.txt"    color="#000000" sq-collider sq-interactable >
+            click-url="url: https://banterlateshow.glitch.me/0-0-shownotes-0-0.txt"    color="#000000" sq-collider sq-interactable >
             <a-text value="Show Notes" position="0 0 0.01" align="center" scale="0.11 0.11 0.11" color="#FFFFFF"></a-text></a-plane>
             <!-- Darwin Awards Button -->
             <a-plane position="0.68 0.18 0" opacity="1.0" width="0.2" height="0.08" class="buttons"
