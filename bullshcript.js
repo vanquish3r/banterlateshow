@@ -197,7 +197,7 @@ function toggleTablet() {
     tablet_browser.setAttribute("rotation", "0 0 0");
     tablet_browser.setAttribute("position", "0 -7 0");
     tablet_browser.setAttribute("sq-browser", {
-      url: "https://late-show.glitch.me/shownotes.txt",
+      url: "https://banterlateshow.glitch.me/0-0-shownotes-0-0.txt",
       pixelsPerUnit: 900,
     });
     document.querySelector("a-scene").appendChild(tablet_browser);
