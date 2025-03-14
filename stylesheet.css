@@ -236,7 +236,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .border-pale-yellow,.hover-border-pale-yellow:hover{border-color:#ffffcc!important}.border-pale-blue,.hover-border-pale-blue:hover{border-color:#e7ffff!important}
 
       body {
-          background-image: url(https://banterlateshow.com/images/background-bls.jpg); /* The image used for background*/
+          background-image: url(images/background-bls.jpg); /* The image used for background*/
           background-repeat: no-repeat; /* Do not repeat the image */
           background-position: center; /* Center the image */
           background-size: cover; /* Resize the background image to cover the entire container */
