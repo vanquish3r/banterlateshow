@@ -156,7 +156,7 @@ function enableScreenThingy() {
 		firescreen.setAttribute("pixelsperunit", "1200");
 		firescreen.setAttribute("hand-controls", "true");
 		firescreen.setAttribute("announce", "false");
-		firescreen.setAttribute("announce-events", "true");
+		firescreen.setAttribute("announce-events", "false");
 		firescreen.setAttribute("announce-four-twenty", "false");
 		firescreen.setAttribute("volume", "0.25");
 		firescreen.setAttribute("width", "1280");
