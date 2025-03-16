@@ -1,425 +1,181 @@
-// Hand volume menu by HBR. Thank you HBR!
-      function clickButton(ptext) {
-        var elements = document.querySelectorAll("a-scene *");
-        for (var i = 0, max = elements.length; i < max; i++) {
-          if (elements[i].getAttribute("value") === ptext) {
-            var playlistButtonText = elements[i];
-            var buttonContainer = playlistButtonText.parentElement;
-            var playlistButton = buttonContainer.children[1];
-            playlistButton.dispatchEvent(new Event("click"));
-          }
-        }
-      }
+const lateshowscene = BS.BanterScene.GetInstance();
 
-      AFRAME.registerComponent("handmenu", {
-        schema: {
-          button: { type: "string", default: "" },
-        },
-        init: function () {
-          this.el.addEventListener("click", () => {
-            clickButton(this.data.button.valueOf());
-          });
-        },
-      });
+let websiteurl = "https://screen.sdq.st:8443/?room=banterlateshow"; /* ?autoplay=1&controls=0 For YouTube Live */
 
-// Synced player volume buttons from The Zotcast Studio by Skizot, scripted by HBR.
-window.aframeTriggerCallback = (msg, isLocal) => {
-  console.log(msg);
-  switch (msg) {
-    case "MutePlayer":
-      if (window.videoPlayerCore.params.mute == "false") {
-        clickButton("mute");
-      }
-      break;
+let otherwebsiteurl = "https://banterlateshow.com/"; // Fire Tablet Homepage
 
-    case "Playlist":
-      clickButton("playlist");
-      break;
+async function somerandomStartActions() {
+	const waitingForUnity = async () => { while (!lateshowscene.unityLoaded) { await new Promise(resolve => setTimeout(resolve, 500)); } };
+	await waitingForUnity(); console.log("SCRIPT: Unity-Loaded");
+	setTimeout(() => { 
 
-    case "UnmutePlayer":
-      if (window.videoPlayerCore.params.mute == "true") {
-        clickButton("mute");
-      }
-      break;
+// TOGGLES ON GITHUB NO LONGER IN USE!
+		
+		/* PLEASE ENABLE ONLY ONE OF THESE AT A TIME */
+		/* UNCOMMENTED THIS TO ENABLE THE YOUTUBE PLAYER */
+			//  enableVideoPlayer();
+		/* UNCOMMENTED THIS TO ENABLE KARAOKE PLAYER */
+			//  enableKaraokePlayer();
+		/* UNCOMMENTED THIS TO ENABLE SCREEN CAST / YOUTUBE LIVE */
+			//  enableScreenStuff();
 
-    case "PlusFive":
-      clickButton("+ vol");
-      break;
-
-    case "MinusFive":
-      clickButton("- vol");
-      break;
-
-    /*    case "MutePlayer":
-      clickButton("- vol");
-      clickButton("- vol");
-      clickButton("- vol");
-      clickButton("- vol");
-      clickButton("- vol");
-      clickButton("- vol");
-      clickButton("- vol");
-      clickButton("- vol");
-      clickButton("- vol");
-      clickButton("- vol");
-      break;
-      */
-
-    /*    case "UnmutePlayer":
-      clickButton("+ vol");
-      break;
-      */
-
-    // Tablet browser trigger by HBR. Thank you HBR!
-    case "ToggleTablet":
-      toggleTablet();
-      break;
-    // Sound Player trigger by HBR. Thank you HBR!
-    case "playIntro":
-      window.oneShot({ playSound1: true }, true);
-      break;
-    case "playOpeningActIntro":
-      window.oneShot({ playSound2: true }, true);
-      break;
-    case "playHostsIntro":
-      window.oneShot({ playSound3: true }, true);
-      break;
-    case "playGuestsIntro":
-      window.oneShot({ playSound4: true }, true);
-      break;
-    case "playOutro":
-      window.oneShot({ playSound5: true }, true);
-      break;
-    case "playReflection":
-      window.oneShot({ playSound6: true }, true);
-      break;
-    // Screencast toggle by HBR. Thank you HBR!
-    case "enableScreencast":
-      enableScreencast();
-      break;
-    case "disableScreencast":
-      disableScreencast();
-      break;
-  }
+    setTimeout(() => { enableScreenThingy(); }, 8000);
+	}, 3000);
 };
 
-//Please change src URL after uploading new track into Assets
 
-// Global Audio Player by HBR. Thank you HBR!
-window.loadDoneCallback = () => {
-  window.AframeInjection.addEventListener("oneShot", (e) => {
-    if (e.detail.data.playSound1) {
-      let audio = new Audio(
-        "https://cdn.glitch.global/8eafb3c3-a848-4d92-b3d8-9358ab99edf9/ep4-intro.mp3?v=1713072438830"
-      );
-      audio.volume = 0.4;
-      audio.autoplay = true;
-      audio.play();
-    }
-    if (e.detail.data.playSound2) {
-      let audio = new Audio(
-        "https://cdn.glitch.global/8eafb3c3-a848-4d92-b3d8-9358ab99edf9/ep3-opening-act-intro.wav?v=1712468205954"
-      );
-      audio.volume = 0.4;
-      audio.autoplay = true;
-      audio.play();
-    }
-    if (e.detail.data.playSound3) {
-      let audio = new Audio(
-        "https://cdn.glitch.global/8eafb3c3-a848-4d92-b3d8-9358ab99edf9/hosts-intro-1.wav?v=1712468205251"
-      );
-      audio.volume = 0.4;
-      audio.autoplay = true;
-      audio.play();
-    }
-    if (e.detail.data.playSound4) {
-      let audio = new Audio(
-        "https://cdn.glitch.global/8eafb3c3-a848-4d92-b3d8-9358ab99edf9/ep3-guests-intro.wav?v=1712468204274"
-      );
-      audio.volume = 0.4;
-      audio.autoplay = true;
-      audio.play();
-    }
-    if (e.detail.data.playSound5) {
-      let audio = new Audio(
-        "https://cdn.glitch.global/8eafb3c3-a848-4d92-b3d8-9358ab99edf9/ep4-outro.mp3?v=1713072439268"
-      );
-      audio.volume = 0.4;
-      audio.autoplay = true;
-      audio.play();
-    }
-    if (e.detail.data.playSound6) {
-      let audio = new Audio(
-        "https://cdn.glitch.global/8eafb3c3-a848-4d92-b3d8-9358ab99edf9/ep4-reflection.mp3?v=1713072438030"
-      );
-      audio.volume = 0.4;
-      audio.autoplay = true;
-      audio.play();
-    }
-  });
+// Video Player Toggle by HBR & FireRat
+let ytplayerdisabled = true;
+  function enableVideoPlayer() {
+  if (ytplayerdisabled){
+    console.log("yt player enabling");
+    ytplayerdisabled = false;
+    const videoplayer = document.createElement("script");
+		videoplayer.id = "bls-videoplayer";
+		videoplayer.setAttribute("scale", "1 1 1");
+		videoplayer.setAttribute("mip-maps", "0");
+		videoplayer.setAttribute("rotation", "0 0 0");
+		videoplayer.setAttribute("position", "0 -3 0");
+		videoplayer.setAttribute("hand-controls", "true");
+		videoplayer.setAttribute("button-position", "-7.413 1.387 21.29");
+		videoplayer.setAttribute("volume", "3");
+		videoplayer.setAttribute("button-rotation", "0 162.3 0");
+		videoplayer.setAttribute("button-scale", "0.15 0.15 0.15");
+		videoplayer.setAttribute("spatial", "false");
+		// videoplayer.setAttribute("spatial-min-distance", "1");
+		// videoplayer.setAttribute("spatial-max-distance", "1000");
+		videoplayer.setAttribute("playlist", "PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_");
+		videoplayer.setAttribute("announce", "false");
+		videoplayer.setAttribute("announce-events", "false");
+		videoplayer.setAttribute("data-playlist-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Playlist.png?v=1713028119937");
+		videoplayer.setAttribute("data-vol-up-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/VolUp.png?v=1713028119640");
+		videoplayer.setAttribute("data-vol-down-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/VolDown.png?v=1713028119279");
+		videoplayer.setAttribute("data-mute-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Mute.png?v=1713028120228");
+		videoplayer.setAttribute("data-skip-forward-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Forward.png?v=1713028118642");
+		videoplayer.setAttribute("data-skip-backward-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Backwardsd.png?v=1713028118986");
+      	videoplayer.setAttribute("src", "https://best-v-player.glitch.me/playlist.js"); // https://vidya.sdq.st/playlist.js
+    document.querySelector("a-scene").appendChild(videoplayer);
+  } else {console.log("enable yt player called");}
 };
 
-// Screencast toggle by HBR. Thank you HBR!
-function disableScreencast() {
-  let screencast = document.getElementById("lateshow-screencast");
-  if (screencast) {
-    // Browser is on, remove it
-    screencast.parentElement.removeChild(screencast);
+// Fire Screen Toggle
+let screenstuffDisabled = true;
+function enableScreenStuff() {
+  if (screenstuffDisabled){
+		screenstuffDisabled = false;
+		console.log("Adding Screen Cast");
+		const firescreen = document.createElement("script");
+		firescreen.id = "bls-firescreen";
+		firescreen.setAttribute("scale", "1 1 1");
+		firescreen.setAttribute("rotation", "0 0 0");
+		firescreen.setAttribute("screen-rotation", "0 0 0");
+		firescreen.setAttribute("screen-scale", "0.515 0.515 1");
+		firescreen.setAttribute("position", "0 -3 0");
+		firescreen.setAttribute("lock-position", "true");
+		firescreen.setAttribute("mipmaps", "0");
+		firescreen.setAttribute("pixelsperunit", "1600");
+		firescreen.setAttribute("castmode", "true");
+		firescreen.setAttribute("backdrop", "false");
+		firescreen.setAttribute("disable-rotation", "true");
+		firescreen.setAttribute("hand-controls", "false");
+		firescreen.setAttribute("announce", "false");
+		firescreen.setAttribute("announce-events", "false");
+		firescreen.setAttribute("announce-four-twenty", "false");
+		firescreen.setAttribute("volume", "0.25");
+		firescreen.setAttribute("width", "1920");
+		firescreen.setAttribute("height", "1080");
+		firescreen.setAttribute("screen-position", "0 0 0");
+		firescreen.setAttribute("website", websiteurl);
+		firescreen.setAttribute("src", "https://firer.at/scripts/firescreenv2.js");
+		document.querySelector("a-scene").appendChild(firescreen);
+		if (websiteurl.includes("hyperbeam.com/i/")) {
+			setTimeout(async () => { 
+				let theBrowserthingy = await lateshowscene.Find(`MyBrowser2`);
+				let thebrowserpart = theBrowserthingy.GetComponent(BS.ComponentType.BanterBrowser);
+				thebrowserpart.RunActions(JSON.stringify({"actions": [{ "actionType": "runscript","strparam1": "const checkbox = document.querySelector(`.p-checkbox-box[role='checkbox']`); const joinButton = document.querySelector('.footer_3Yiou .joinBtn_1TAU6'); if (checkbox) checkbox.click(); if (joinButton) { const observer = new MutationObserver(() => { if (!joinButton.classList.contains('p-disabled')) { joinButton.click(); observer.disconnect(); setTimeout(() => { const skipButton = document.querySelector('.dialog-secondary-btn'); if (skipButton) skipButton.click(); }, 3000); } }); observer.observe(joinButton, { attributes: true, attributeFilter: ['class'] }); }" }]}));
+				setTimeout(async () => {
+					thebrowserpart.RunActions(JSON.stringify({"actions": [{ "actionType": "runscript","strparam1": "var fullscreenButton = document.querySelector(`.p-button.p-component.tu-button.btn-tertiary.btn_2YRyp svg path[d^='M3 3h6.429']`); if (fullscreenButton) { fullscreenButton.closest('button').click(); } setTimeout(async () => { var chatButton = document.querySelector(`.p-button.p-component.tu-button.btn-tertiary.fsChatBtn_2cCyy svg path[d^='M22 22h-2V2h2v20zM2 11h12.17']`); if (chatButton) { chatButton.closest('button').click(); } }, 3500);" }]}));
+				}, 5000);
+			}, 3000);
+		}
   }
+	console.log("Screen Stuff enabled: " + screenstuffDisabled);
+};
+
+// Karaoke Player Toggle
+let karaokeplayerdisabled = true;
+  function enableKaraokePlayer() {
+  if (karaokeplayerdisabled){
+    console.log("karaoke player enabling");
+    karaokeplayerdisabled = false;
+    const videoplayer = document.createElement("script");
+		videoplayer.id = "bls-karaokeplayer";
+		videoplayer.setAttribute("scale", "1 1 1");
+		videoplayer.setAttribute("mip-maps", "0");
+		videoplayer.setAttribute("rotation", "0 0 0");
+		videoplayer.setAttribute("position", "0 -3 0");
+		videoplayer.setAttribute("hand-controls", "true");
+		videoplayer.setAttribute("button-position", "-0 -5 0");
+		videoplayer.setAttribute("volume", "10");
+		videoplayer.setAttribute("button-rotation", "0 0 0");
+		videoplayer.setAttribute("button-scale", "0.7 0.7 0.7");
+		videoplayer.setAttribute("singer-button-position", "-0.06 -3.7 29.1");
+		videoplayer.setAttribute("singer-button-rotation", "0 180 0");
+		// videoplayer.setAttribute("singer-button-scale", "1.5 1.5 1.5");
+	  	videoplayer.setAttribute("spatial", "false");
+		// videoplayer.setAttribute("spatial-min-distance", "1");
+		// videoplayer.setAttribute("spatial-max-distance", "1000");
+		videoplayer.setAttribute("playlist", "");
+		videoplayer.setAttribute("announce", "false");
+	  	videoplayer.setAttribute("announce-events", "false");
+		// videoplayer.setAttribute("data-playlist-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Playlist.png?v=1713028119937");
+		// videoplayer.setAttribute("data-vol-up-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/VolUp.png?v=1713028119640");
+		// videoplayer.setAttribute("data-vol-down-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/VolDown.png?v=1713028119279");
+		// videoplayer.setAttribute("data-mute-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Mute.png?v=1713028120228");
+		// videoplayer.setAttribute("data-skip-forward-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Forward.png?v=1713028118642");
+		// videoplayer.setAttribute("data-skip-backward-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Backwardsd.png?v=1713028118986");
+		videoplayer.setAttribute("src", "https://vidya.sdq.st/karaoke.js"); // https://best-v-player.glitch.me/karaoke.js
+    document.querySelector("a-scene").appendChild(videoplayer);
+  } else {console.log("enable karaoke player called");}
+};
+
+// Fire Tablet Toggle
+let otherScreenDisabled = true;
+
+function enableScreenThingy() {
+	console.log("File: loaded");
+	if (otherScreenDisabled) {
+		otherScreenDisabled = false;
+		console.log("Adding Screen");
+		const firescreen = document.createElement("script");
+		firescreen.id = "bls-firetablet";
+		firescreen.setAttribute("scale", "0.8 0.8 1");
+		firescreen.setAttribute("position", "4.2 0.609 14.9");
+		firescreen.setAttribute("rotation", "0 6.5 0");		
+		firescreen.setAttribute("mipmaps", "0");
+		firescreen.setAttribute("pixelsperunit", "1200");
+		firescreen.setAttribute("hand-controls", "true");
+		firescreen.setAttribute("announce", "false");
+		firescreen.setAttribute("announce-events", "true");
+		firescreen.setAttribute("announce-four-twenty", "false");
+		firescreen.setAttribute("volume", "0.25");
+		firescreen.setAttribute("width", "1280");
+		firescreen.setAttribute("height", "720");
+		firescreen.setAttribute("website", otherwebsiteurl);
+		// firescreen.setAttribute("disable-rotation", "false");
+		firescreen.setAttribute("custom-button01-url", "https://banterlateshow.glitch.me/0-0-shownotes-0-0.txt");
+		firescreen.setAttribute("custom-button01-text", "BLS Show Notes");
+		firescreen.setAttribute("custom-button02-url", "https://banterlateshow.glitch.me/darwinawards.html");
+		firescreen.setAttribute("custom-button02-text", "Darwin Awards");
+		firescreen.setAttribute("custom-button03-url", "https://banterlateshow.glitch.me/cag-shownotes.txt");
+		firescreen.setAttribute("custom-button03-text", "CAG Show Notes");
+		//firescreen.setAttribute("custom-button04-url", "https://bls.firer.at/shownotes.html");
+		//firescreen.setAttribute("custom-button04-text", "firer.at shownotes");
+		firescreen.setAttribute("custom-button04-url", "https://banterlateshow.com");
+		firescreen.setAttribute("custom-button04-text", "Banter Late Show");
+		firescreen.setAttribute("src", "https://firer.at/scripts/firescreenv2.js");
+		document.querySelector("a-scene").appendChild(firescreen);
+	};
 }
 
-function enableScreencast() {
-  //just to be sure we don't create multiple
-  disableScreencast();
-  //now add it
-  const screencast = document.createElement("a-entity");
-  screencast.id = "lateshow-screencast";
-  screencast.setAttribute("scale", "1 1 1");
-  screencast.setAttribute("rotation", "0 0 0");
-  screencast.setAttribute("position", "0 -5 0");
-  screencast.setAttribute(
-    "sq-browser",
-    "url: https://sidequestvr.github.io/SideQuest.Banter.Spaces/screen-cast/?sid=1029384756; mipMaps: 1; pixelsPerUnit: 900; mode: local;"
-  );
-  document.querySelector("a-scene").appendChild(screencast);
-}
-
-// Tablet browser toggle by HBR. Thank you HBR!
-function toggleTablet() {
-  let tablet = document.getElementById("lateshow-shownotes");
-  if (tablet) {
-    // Browser is on, remove it
-    tablet.parentElement.removeChild(tablet);
-  } else {
-    // Browser is off, add it
-    const tablet_browser = document.createElement("a-entity");
-    tablet_browser.id = "lateshow-shownotes";
-    tablet_browser.setAttribute("scale", "1 1 1");
-    tablet_browser.setAttribute("rotation", "0 0 0");
-    tablet_browser.setAttribute("position", "0 -7 0");
-    tablet_browser.setAttribute("sq-browser", {
-      url: "https://banterlateshow.glitch.me/0-0-shownotes-0-0.txt",
-      pixelsPerUnit: 900,
-    });
-    document.querySelector("a-scene").appendChild(tablet_browser);
-  }
-}
-
-
-
-// Everyone who helped make this possible, HBR, Vanquisher, DedZed, Sebek and FireRat, And thank you to everyone who helped test it
-// Enables Interaction for all the browser windows by HBR
-    AFRAME.registerComponent("enable-interaction", { init: async function() { await window.AframeInjection.waitFor(this.el, "browser");
-      this.el.browser.ToggleInteraction(true)       } });
-      
-// Listens for button clicks to open the urls on either Screen by HBR
-  AFRAME.registerComponent("click-url", {
-  schema: { url: { type: "string", default: "" }, },
-  init: function () {
-    this.el.addEventListener("click", () => {                         
-    const TheBrowser = this.el.parentElement;
-    TheBrowser.setAttribute("sq-browser", { url: this.data.url, pixelsPerUnit: 900, mipMaps: 1, mode: "local", });   
-    });   },    });
-    
- // Toggle Button for locking and unlocking either screen By Fire with help from HBR
-  AFRAME.registerComponent("lockbutton", {
-  init: function () {
-    this.el.addEventListener("click", () => {
-    const lockToggle = this.el;
-    const ColliderScreen = lockToggle.parentElement.children[0];
-    if (ColliderScreen.getAttribute("visible")) {
-        lockToggle.setAttribute("color","#FF0000");
-        ColliderScreen.setAttribute("visible","false");
-    } else {
-        lockToggle.setAttribute("color","#00FF00");
-        ColliderScreen.setAttribute("visible","true");
-    }   });  },   });
-
-    
-// Toggle Sound for browser screen By Fire with help from HBR
-  AFRAME.registerComponent("toggle-mute", {
-  init: function () {
-    this.el.addEventListener("click", () => {
-    const TheBrowser = this.el.parentElement;
-    const MuteButton = this.el;
-    if(TheBrowser.getAttribute("datamuted")=="true") {
-      MuteButton.setAttribute("color","#FFFFFF");
-      TheBrowser.setAttribute("datamuted", "false");
-      TheBrowser.components["sq-browser"].runActions([ { actionType: "runscript", strparam1:
-        "document.querySelectorAll('video, audio').forEach((elem) => elem.muted=false);", }, ]);
-    } else {
-      MuteButton.setAttribute("color","#FF0000");
-      TheBrowser.setAttribute("datamuted", "true")
-      TheBrowser.components["sq-browser"].runActions([ { actionType: "runscript", strparam1:
-          "document.querySelectorAll('video, audio').forEach((elem) => elem.muted=true);",
-        },      ]);     }   });   },  });
-      
-// Changes Scale of either Screen when button clicked with help from HBR
-  AFRAME.registerComponent("scale-screen", {
-  schema: {
-    size: { type: "string" },
-    avalue: { type: "number" },
-  },
-  init: function () {
-    this.el.addEventListener("click", () => {  
-    var screenScale = this.el.parentElement;
-    let scaleX = screenScale.object3D.scale.x;
-    let scaleY = screenScale.object3D.scale.y;
-    switch (this.data.size) {
-      case "grow":
-      scaleX += this.data.avalue;
-      scaleY += this.data.avalue;
-      break;
-      case "shrink":
-      scaleX += this.data.avalue;
-      scaleY += this.data.avalue;
-      break;
-    }
-    this.el.setAttribute("color","#AAAAAA");
-    screenScale.setAttribute("scale", scaleX + " " + scaleY + " 1");
-    setTimeout(() => {  this.el.setAttribute("color","#00FF00"); }, 100);
-    });   },    });
-    
-  // Rotate either screen when buttons clicked by HBR
-  AFRAME.registerComponent("rotate", {
-  schema: {
-    axis: { type: "string" },
-    amount: { type: "number" },
-  },
-  init: function () {
-    this.el.addEventListener("click", () => {
-    let browserRotation = this.el.parentElement;
-    let x = browserRotation.object3D.rotation.x;
-    let y = browserRotation.object3D.rotation.y;
-    let z = browserRotation.object3D.rotation.z;
-    switch (this.data.axis) {
-      case "x":
-      x += this.data.amount;
-      break;
-      case "y":
-      y += this.data.amount;
-      break;
-    }
-    this.el.setAttribute("color","#AAAAAA");
-    browserRotation.setAttribute("rotation", x + " " + y + " " + z);  
-    setTimeout(() => {  this.el.setAttribute("color","#00FF00"); }, 100); 
-    });        },      });
-
-  // Toggle for hiding and showing the scale buttons By Fire with help from HBR
-  AFRAME.registerComponent("enablerot", {
-  init: function () {
-    this.el.addEventListener("click", () => {
-    const rotats = this.el;
-    const rotatebutton = rotats.parentElement.children[6];
-    var els = document.getElementsByClassName("tilt");
-    if (rotatebutton.getAttribute("visible")) {
-        rotats.setAttribute("color","#FFFFFF");
-      [].forEach.call(els, function (el) {
-        el.setAttribute("visible","false");
-      });
-    } else {
-        rotats.setAttribute("color","#00FF00");
-      [].forEach.call(els, function (el) {
-        el.setAttribute("visible","true");
-      });
-    }   });  },   });
-    
-  
-  // Toggle for hiding and showing buttons By Fire with help from HBR
-  AFRAME.registerComponent("hidebuttons", {
-  init: function () {
-    this.el.addEventListener("click", () => {
-    const hidebut = this.el;
-    const somebutton = hidebut.parentElement.children[2];
-    var buttons = document.getElementsByClassName("buttons");
-    if (somebutton.getAttribute("visible")) {
-        hidebut.setAttribute("color","#FF0000");
-      [].forEach.call(buttons, function (el) {
-        el.setAttribute("visible","false");
-      });
-    } else {
-        hidebut.setAttribute("color","#FFFFFF");
-      [].forEach.call(buttons, function (el) {
-        el.setAttribute("visible","true");
-      });
-    }   });  },   });
-    
-// Changes Volume of the Screen when button clicked By Fire with help from HBR
-  AFRAME.registerComponent("volume-level", {
-  schema: {
-    vvalue: { type: "number" },
-  },
-  init: function () {
-    this.el.addEventListener("click", () => {  
-    var screenVolume = this.el.parentElement;
-    let volume = parseFloat(screenVolume.getAttribute("volumelevel"));
-    volume += this.data.vvalue;
-    volume = volume.toFixed(2);
-    if (volume > 1) {volume = 1};
-    if (volume < 0) {volume = 0};
-    screenVolume.components["sq-browser"].runActions([ { actionType: "runscript", strparam1:
-  "document.querySelectorAll('video, audio').forEach((elem) => elem.volume=" + volume + ");", }, ]);
-    this.el.setAttribute("color","#AAAAAA");
-    screenVolume.setAttribute("volumelevel", volume);
-    setTimeout(() => {  this.el.setAttribute("color","#00FF00"); }, 100);
-    });   },    });
-    
-  
-  // Navigates browser page Backwards/Forward
-  AFRAME.registerComponent("navigate-browser", {
-  schema: {
-    action: { type: "string", default: "goback" }  // Default action is "goback"
-  },
-  init: function () {
-    const browserElement = this.el.parentElement;
-    this.el.addEventListener("click", () => {
-      const actionType = this.data.action;
-      this.el.setAttribute("color", "#AAAAAA");
-      browserElement.components['sq-browser'].runActions([{
-        actionType: actionType
-      }]);
-      setTimeout(() => {
-        this.el.setAttribute("color", "#00FF00");
-      }, 100);
-    });
-  },
-});
-
-  // Toggle Sound for browser screen By Fire with help from HBR
-  AFRAME.registerComponent("toggle-mute", {
-  init: function () {
-    this.el.addEventListener("click", () => {
-    const TheBrowser = this.el.parentElement;
-    const MuteButton = this.el;
-    if(TheBrowser.getAttribute("datamuted")=="true") {
-      MuteButton.setAttribute("color","#FFFFFF");
-      TheBrowser.setAttribute("datamuted", "false");
-      TheBrowser.components["sq-browser"].runActions([ { actionType: "runscript", strparam1:
-        "document.querySelectorAll('video, audio').forEach((elem) => elem.muted=false);", }, ]);
-    } else {
-      MuteButton.setAttribute("color","#FF0000");
-      TheBrowser.setAttribute("datamuted", "true")
-      TheBrowser.components["sq-browser"].runActions([ { actionType: "runscript", strparam1:
-          "document.querySelectorAll('video, audio').forEach((elem) => elem.muted=true);",
-        },      ]);     }   });   },  });
-
-// Changes Volume of the Screen when button clicked By Fire with help from HBR
-  AFRAME.registerComponent("volume-level", {
-  schema: {
-    vvalue: { type: "number" },
-  },
-  init: function () {
-    this.el.addEventListener("click", () => {  
-    var screenVolume = this.el.parentElement;
-    let volume = parseFloat(screenVolume.getAttribute("volumelevel"));
-    volume += this.data.vvalue;
-    volume = volume.toFixed(2);
-    if (volume > 1) {volume = 1};
-    if (volume < 0) {volume = 0};
-      console.log(volume);
-    screenVolume.components["sq-browser"].runActions([ { actionType: "runscript", strparam1:
-  "document.querySelectorAll('video, audio').forEach((elem) => elem.volume=" + volume + ");", }, ]);
-    this.el.setAttribute("color","#AAAAAA");
-    screenVolume.setAttribute("volumelevel", volume);
-    setTimeout(() => {  this.el.setAttribute("color","#00FF00"); }, 100);
-    });   },    });
-
+setTimeout(() => { somerandomStartActions(); }, 5000);
