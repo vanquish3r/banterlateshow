@@ -1,6 +1,7 @@
 const lateshowscene = BS.BanterScene.GetInstance();
 
-let websiteurl = "https://screen.sdq.st:8443/?room=banterlateshow"; /* ?autoplay=1&controls=0 For YouTube Live */
+let websiteurl = "https://cannabanter.firer.at/embed.html?420"; /* ?autoplay=1&controls=0 For YouTube Live */
+// https://screen.sdq.st:8443/?room=banterlateshow
 
 let otherwebsiteurl = "https://banterlateshow.com/"; // Fire Tablet Homepage
 
