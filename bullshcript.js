@@ -37,7 +37,7 @@ let ytplayerdisabled = true;
 		videoplayer.setAttribute("rotation", "0 0 0");
 		videoplayer.setAttribute("position", "0 -3 0");
 		videoplayer.setAttribute("hand-controls", "true");
-		videoplayer.setAttribute("button-position", "0 3.05 -1.25");
+		videoplayer.setAttribute("button-position", "0 3.05 -1.23");
 		videoplayer.setAttribute("volume", "3");
 		videoplayer.setAttribute("button-rotation", "0 0 0");
 		videoplayer.setAttribute("button-scale", "2 2 2");
@@ -150,7 +150,7 @@ function enableScreenThingy() {
 		const firescreen = document.createElement("script");
 		firescreen.id = "bls-firetablet";
 		firescreen.setAttribute("scale", "0.8 0.8 1");
-		firescreen.setAttribute("position", "4.2 0.609 -14.5");
+		firescreen.setAttribute("position", "4.2 0.609 -15.2");
 		firescreen.setAttribute("rotation", "0 6.5 0");		
 		firescreen.setAttribute("mipmaps", "0");
 		firescreen.setAttribute("pixelsperunit", "1200");
