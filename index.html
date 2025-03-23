@@ -1,4 +1,4 @@
-<html>
+<html android-bundle="https://lateshow.bant.ing/android.banter" windows-bundle="https://lateshow.bant.ing/windows.banter">
   <head>
     <title>The Banter Late Show | Pioneer of late shows in Virtual Reality</title>
     <link rel="icon" href="images/logo-bls.png" />
@@ -32,12 +32,11 @@
   </head>
   <body>
     <!-- Banter Only Portion -->
-            <div style="display: none;"> <!-- this is a hidden div on the website, this is ignored by Banter but hides the scene on the 2D page -->
-    <a-scene sq-assetbundle="android: https://033607.bant.ing/android.banter; 
-                             desktop: https://033607.bant.ing/windows.banter;" embedded>
+  <div style="display: none;"> <!-- this is a hidden div on the website, this is ignored by Banter but hides the scene on the 2D page -->
+    <a-scene id="ascene" embedded>
 <!-- the embedded property stops the scene from taking up the whole page and allows the 2D page to be scrollable -->
     </a-scene>
-   </div>
+  </div>
     
     <!-- Web Browser Only Portion -->   
     <!-- Content container -->
