@@ -1,2 +1,0 @@
-assets/_content/prefabs/africa.prefab
-assets/_content/prefabs/bls.prefab
