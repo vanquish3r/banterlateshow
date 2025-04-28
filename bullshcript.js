@@ -171,5 +171,3 @@ function enableScreenThingy() {
 		document.querySelector("a-scene").appendChild(firescreen);
 	};
 }
-
-setTimeout(() => { somerandomStartActions(); }, 5000);
