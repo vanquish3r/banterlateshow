@@ -30,12 +30,6 @@
     <script src="bullshcript.js?1"></script>
   </head>
   <body>
-    <!-- Banter Only Portion -->
-  <div style="display: none;"> <!-- this is a hidden div on the website, this is ignored by Banter but hides the scene on the 2D page -->
-    <a-scene sq-maxoccupancy="number: 40" embedded><!-- the embedded property stops the scene from taking up the whole page and allows the 2D page to be scrollable -->
-    </a-scene>
-  </div>
-    
     <!-- Web Browser Only Portion -->   
     <!-- Content container -->
     <div class="container">
@@ -98,21 +92,26 @@
     </div>
      <div class="footer padding-top-12 text-white">
     <div id="video" style="margin: auto"><h3><strong>What is BANTER?</strong></h3></div>
-    <video width="560" poster="/images/trailer.jpg" controls>
+<!--    <video width="560" poster="/images/trailer.jpg" controls>
       <source src="video/banter-trailer.mp4" type="video/mp4">
       Your browser does not support HTML video.
-    </video>
+    </video> -->
+       <img src="images/banter.gif">
        <br/>
        <div style="margin: auto">
-          <br/><a href="https://store.steampowered.com/app/2564460/Banter/" target="_blank"><img src="https://bantervr.com/assets/SteamSDF-01.png" class="center"></a>
+          <br/><a href="https://store.steampowered.com/app/2564460/Banter/" target="_blank">< src="https://bantervr.com/assets/SteamSDF-01.png" class="center"></a>
           <br/> <br/>
-          <a href="https://www.meta.com/experiences/banter/5404906916283287/" target="_blank"><img src="https://bantervr.com/assets/MetaQuest-Logo2022.png" class="center"></a>
+          <a href="https://www.meta.com/experiences/banter/5404906916283287/" target="_blank">< src="https://bantervr.com/assets/MetaQuest-Logo2022.png" class="center"></a>
           <br/> <br/>
-          <a href="https://sidequestvr.com/app/10831/banter-public-beta" target="_blank"><img src="https://bantervr.com/assets/PICO-logo-white_sm2.png" class="center"></a>
+          <a href="https://sidequestvr.com/app/10831/banter-public-beta" target="_blank">< src="https://bantervr.com/assets/PICO-logo-white_sm2.png" class="center"></a>
           <br/> <br/>
-          <a href="https://play.google.com/store/apps/details?id=com.SideQuest.Banter" target="_blank"><img src="https://bantervr.com/assets/GetItOnGooglePlay_Badge_Web_color_English.png" class="center"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.SideQuest.Banter" target="_blank">< src="https://bantervr.com/assets/GetItOnGooglePlay_Badge_Web_color_English.png" class="center"></a>
           <br/> <br/> <br/>
        </div>
     </div>
-  </body>
+    <!-- Banter Only Portion -->
+  <div style="display: none;"> <!-- this is a hidden div on the website, this is ignored by Banter but hides the scene on the 2D page -->
+    <a-scene sq-maxoccupancy="number: 40" embedded></a-scene><!-- the embedded property stops the scene from taking up the whole page and allows the 2D page to be scrollable -->
+  </div>
+      </body>
 </html>
