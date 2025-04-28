@@ -133,41 +133,41 @@ let karaokeplayerdisabled = true;
   } else {console.log("enable karaoke player called");}
 };
 
-// Fire Tablet Toggle
-let otherScreenDisabled = true;
-
+// Fire Tablet
+let screenPortableDisabled = true;
 function enableScreenThingy() {
-	console.log("File: loaded");
-	if (otherScreenDisabled) {
-		otherScreenDisabled = false;
-		console.log("Adding Screen");
-		const firescreen = document.createElement("script");
-		firescreen.id = "bls-firetablet";
-		firescreen.setAttribute("scale", "0.8 0.8 1");
-		firescreen.setAttribute("position", "4.2 0.609 -15.2");
-		firescreen.setAttribute("rotation", "0 6.5 0");		
-		firescreen.setAttribute("mipmaps", "0");
-		firescreen.setAttribute("pixelsperunit", "1200");
-		firescreen.setAttribute("hand-controls", "true");
-		firescreen.setAttribute("announce", "false");
-		firescreen.setAttribute("announce-events", "false");
-		firescreen.setAttribute("announce-four-twenty", "false");
-		firescreen.setAttribute("volume", "0.25");
-		firescreen.setAttribute("width", "1280");
-		firescreen.setAttribute("height", "720");
-		firescreen.setAttribute("website", otherwebsiteurl);
-		// firescreen.setAttribute("disable-rotation", "false");
-		firescreen.setAttribute("custom-button01-url", "https://banterlateshow.glitch.me/0-0-shownotes-0-0.txt");
-		firescreen.setAttribute("custom-button01-text", "BLS Show Notes");
-		firescreen.setAttribute("custom-button02-url", "https://banterlateshow.glitch.me/darwinawards.html");
-		firescreen.setAttribute("custom-button02-text", "Darwin Awards");
-		firescreen.setAttribute("custom-button03-url", "https://banterlateshow.glitch.me/cag-shownotes.txt");
-		firescreen.setAttribute("custom-button03-text", "CAG Show Notes");
-		//firescreen.setAttribute("custom-button04-url", "https://bls.firer.at/shownotes.html");
-		//firescreen.setAttribute("custom-button04-text", "firer.at shownotes");
-		firescreen.setAttribute("custom-button04-url", "https://banterlateshow.com");
-		firescreen.setAttribute("custom-button04-text", "Banter Late Show");
-		firescreen.setAttribute("src", "https://firer.at/scripts/firescreenv2.js");
-		document.querySelector("a-scene").appendChild(firescreen);
-	};
+  if (screenPortableDisabled){ screenPortableDisabled = false;
+   setTimeout(() => { 
+	console.log("Adding Fire Tablet");
+	const firescreen = document.createElement("script");
+	firescreen.id = "bls-firetablet";
+	firescreen.setAttribute("scale", "0.7 0.7 1");
+	firescreen.setAttribute("rotation", "0 0 0");
+	firescreen.setAttribute("position", "4.2 0.609 -15.2");
+	firescreen.setAttribute("mipmaps", "0");
+	firescreen.setAttribute("pixelsperunit", "1200");
+	firescreen.setAttribute("width", "1280");
+	firescreen.setAttribute("height", "720");
+	firescreen.setAttribute("announce", "false");
+	firescreen.setAttribute("announce-events", "false");
+	firescreen.setAttribute("volume", "0.25");
+   	firescreen.setAttribute("backdrop", "true");
+	firescreen.setAttribute("hand-controls", "true");
+	firescreen.setAttribute("custom-button01-url", "https://banterlateshow.glitch.me/0-0-shownotes-0-0.txt");
+	firescreen.setAttribute("custom-button01-text", "BLS Show Notes");
+	firescreen.setAttribute("custom-button02-url", "https://banterlateshow.glitch.me/darwinawards.html");
+	firescreen.setAttribute("custom-button02-text", "Darwin Awards");
+	firescreen.setAttribute("custom-button03-url", "https://banterlateshow.glitch.me/cag-shownotes.txt");
+	firescreen.setAttribute("custom-button03-text", "CAG Show Notes");
+	//firescreen.setAttribute("custom-button04-url", "https://bls.firer.at/shownotes.html");
+	//firescreen.setAttribute("custom-button04-text", "firer.at shownotes");
+	firescreen.setAttribute("custom-button04-url", "https://banterlateshow.com");
+	firescreen.setAttribute("custom-button04-text", "Banter Late Show");
+	firescreen.setAttribute("website", otherwebsiteurl);
+	firescreen.setAttribute("src", "https://firer.at/scripts/firescreenv2.js");
+	document.querySelector("a-scene").appendChild(firescreen);
+   }, 5000); 
+  }
+    console.log("Fire Tablet enabled");
+
 }
