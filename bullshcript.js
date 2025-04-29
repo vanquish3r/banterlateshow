@@ -1,12 +1,18 @@
+const lateshowscene = BS.BanterScene.GetInstance();
+
 let websiteurl = "https://screen.sdq.st:8443/?room=banterlateshow"; /* ?autoplay=1&controls=0 For YouTube Live */
 // https://screen.sdq.st:8443/?room=banterlateshow
 // https://cannabanter.firer.at/embed.html?420
 
 let otherwebsiteurl = "https://banterlateshow.com/"; // Fire Tablet Homepage
 
-BS.BanterScene.GetInstance().On("loaded", () => {
- 	console.log("Scene loaded");
-// TOGGLES ON GITHUB NO LONGER IN USE!		
+async function somerandomStartActions() {
+	const waitingForUnity = async () => { while (!lateshowscene.unityLoaded) { await new Promise(resolve => setTimeout(resolve, 500)); } };
+	await waitingForUnity(); console.log("SCRIPT: Unity-Loaded");
+	setTimeout(() => { 
+
+// TOGGLES ON GITHUB NO LONGER IN USE!
+		
 		/* PLEASE ENABLE ONLY ONE OF THESE AT A TIME */
 		/* UNCOMMENTED THIS TO ENABLE THE YOUTUBE PLAYER */
 			//  enableVideoPlayer();
@@ -14,9 +20,10 @@ BS.BanterScene.GetInstance().On("loaded", () => {
 			//  enableKaraokePlayer();
 		/* UNCOMMENTED THIS TO ENABLE SCREEN CAST / YOUTUBE LIVE */
 			//  enableScreenStuff();
-		/* FIRETABLET */
-			  enableScreenThingy();
-});
+
+    setTimeout(() => { enableScreenThingy(); }, 8000);
+	}, 3000);
+};
 
 // Video Player Toggle by HBR & FireRat
 let ytplayerdisabled = true;
@@ -171,3 +178,5 @@ function enableScreenThingy() {
     console.log("Fire Tablet enabled");
 
 }
+
+setTimeout(() => { somerandomStartActions(); }, 5000);
