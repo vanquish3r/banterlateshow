@@ -160,7 +160,7 @@ function enableScreenThingy() {
 	firescreen.setAttribute("volume", "0.25");
    	firescreen.setAttribute("backdrop", "true");
 	firescreen.setAttribute("hand-controls", "true");
-	firescreen.setAttribute("custom-button01-url", "https://banterlateshow.glitch.me/0-0-shownotes-0-0.txt");
+	firescreen.setAttribute("custom-button01-url", "https://banterlateshow.com/0-0-shownotes-0-0.txt");
 	firescreen.setAttribute("custom-button01-text", "BLS Show Notes");
 	firescreen.setAttribute("custom-button02-url", "https://banterlateshow.glitch.me/darwinawards.html");
 	firescreen.setAttribute("custom-button02-text", "Darwin Awards");
