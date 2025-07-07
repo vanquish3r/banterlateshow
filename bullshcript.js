@@ -37,7 +37,7 @@ let ytplayerdisabled = true;
 		videoplayer.setAttribute("mip-maps", "0");
 		videoplayer.setAttribute("rotation", "0 0 0");
 		videoplayer.setAttribute("position", "0 -3 0");
-		videoplayer.setAttribute("hand-controls", "true");
+		videoplayer.setAttribute("hand-controls", "false");
 		videoplayer.setAttribute("button-position", "0 3.05 -1.1");
 		videoplayer.setAttribute("volume", "3");
 		videoplayer.setAttribute("button-rotation", "0 0 0");
