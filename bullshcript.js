@@ -1,6 +1,6 @@
 const lateshowscene = BS.BanterScene.GetInstance();
 
-let websiteurl = "https://screen.sdq.st:8443/?room=banterlateshow"; /* ?autoplay=1&controls=0 For YouTube Live */
+let websiteurl = "https://vdo.ninja/?view=banterlateshow&bitrate=20000&codec=vp9&stereo"; /* ?autoplay=1&controls=0 For YouTube Live */
 // https://screen.sdq.st:8443/?room=banterlateshow
 // https://cannabanter.firer.at/embed.html?420
 
