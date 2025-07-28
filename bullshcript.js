@@ -21,162 +21,197 @@ async function somerandomStartActions() {
 		/* UNCOMMENTED THIS TO ENABLE SCREEN CAST / YOUTUBE LIVE */
 			//  enableScreenStuff();
 
-    setTimeout(() => { enableScreenThingy(); }, 8000);
-	}, 3000);
+	}, 1000);
+	enableScreenThingy();
 };
 
-// Video Player Toggle by HBR & FireRat
+/////////////// RENDER SCRIPT LOADER STUFF ///////////////
+async function injectRenderScript(theScriptsURL, TheScriptsName = "UnNamed", attributes = {}, appendTo = document.body) {
+  const scriptUrl = theScriptsURL;
+  try { // 1. "Warm-up" request: Ping the server to wake it up.
+    console.log("Waking up the server...");
+    await fetch(scriptUrl, { method: 'HEAD', mode: 'no-cors' }); // We use { method: 'HEAD' } to be more efficient.
+    console.log("Server is awake! Injecting script..."); // We only need to know the server is awake, not download the whole script yet.
+    const script = document.createElement("script"); // 2. Inject the script now that the server is ready.
+    script.id = `${TheScriptsName}`;
+    script.setAttribute("src", scriptUrl); // Set the src attribute
+    Object.entries(attributes).forEach(([key, value]) => { script.setAttribute(key, value); }); // Set all custom attributes
+    appendTo.appendChild(script);
+    script.onload = () => { console.log(`${TheScriptsName} script loaded successfully!`); }; // Set up event handlers
+    script.onerror = () => { console.error(`Failed to load the ${TheScriptsName} script.`); };
+  } catch (error) { // The fetch itself might fail, though 'no-cors' mode often prevents this.
+    console.error("The warm-up request failed. The script might not load.", error); // The real check is the script's onerror handler.
+  }
+}
+
+// Player Toggle's by FireRat
 let ytplayerdisabled = true;
-  function enableVideoPlayer() {
-  if (ytplayerdisabled){
-    console.log("yt player enabling");
-    ytplayerdisabled = false;
-    const videoplayer = document.createElement("script");
-		videoplayer.id = "bls-videoplayer";
-		videoplayer.setAttribute("scale", "1 1 1");
-		videoplayer.setAttribute("mip-maps", "0");
-		videoplayer.setAttribute("rotation", "0 0 0");
-		videoplayer.setAttribute("position", "0 -3 0");
-		videoplayer.setAttribute("hand-controls", "false");
-		videoplayer.setAttribute("button-position", "0 3.05 -1.1");
-		videoplayer.setAttribute("volume", "3");
-		videoplayer.setAttribute("button-rotation", "0 0 0");
-		videoplayer.setAttribute("button-scale", "1 1 1");
-		videoplayer.setAttribute("spatial", "false");
-		// videoplayer.setAttribute("spatial-min-distance", "1");
-		// videoplayer.setAttribute("spatial-max-distance", "1000");
-		videoplayer.setAttribute("playlist", "PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_");
-		videoplayer.setAttribute("announce", "false");
-		videoplayer.setAttribute("announce-events", "false");
-		videoplayer.setAttribute("data-playlist-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Playlist.png?v=1713028119937");
-		videoplayer.setAttribute("data-vol-up-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/VolUp.png?v=1713028119640");
-		videoplayer.setAttribute("data-vol-down-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/VolDown.png?v=1713028119279");
-		videoplayer.setAttribute("data-mute-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Mute.png?v=1713028120228");
-		videoplayer.setAttribute("data-skip-forward-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Forward.png?v=1713028118642");
-		videoplayer.setAttribute("data-skip-backward-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Backwardsd.png?v=1713028118986");
-      	videoplayer.setAttribute("src", "https://vidya.sdq.st/playlist.js"); // https://best-v-player.glitch.me/playlist.js
-    document.querySelector("a-scene").appendChild(videoplayer);
-  } else {console.log("enable yt player called");}
+let karaokeplayerdisabled = true;
+let screenstuffDisabled = true;
+let screenPortableDisabled = true;
+
+async function enableVideoPlayer() {	
+	// If Browser already exists, DESTROY IT!
+	var browser = await BS.BanterScene.GetInstance().Find('MainParentObject2');
+	if (browser) { console.log("Browser2 Found, Removing it!"); cleanupFireScreenV2(2); screenstuffDisabled = true; }
+	// If Karaoke Player exists, Destroy it!
+	let delayYT = false;
+	if (window.karaokePlayerInstance) { delayYT = true; karaokeplayerdisabled = true; console.log("Karaoke Player exists, Destroying it!"); window.cleanupVideoPlayer(); }
+  	if (ytplayerdisabled){
+		setTimeout(() => {  
+			console.log("yt player enabling");
+			ytplayerdisabled = false;
+			const youtubeAttributes = {
+				"scale": "1 1 1",
+				"mip-maps": "0",
+				"rotation": "0 0 0",
+				"position": "0 -3 0",
+				"hand-controls": "false",
+				"button-position": "0 3.05 -1.1",
+				"volume": "3",
+				"button-rotation": "0 0 0",
+				"button-scale": "1 1 1",
+				"spatial": "false",
+				// "spatial-min-distance": "1",
+				// "spatial-max-distance": "1000",
+				"playlist": "PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_",
+				// "data-playlist-icon-url": "https://vanquish3r.github.io/cannabanter/images/Playlist.png",
+				// "data-vol-up-icon-url": "https://vanquish3r.github.io/cannabanter/images/Vol_Up.png",
+				// "data-vol-down-icon-url": "https://vanquish3r.github.io/cannabanter/images/Vol_Dn.png",
+				// "data-mute-icon-url": "https://vanquish3r.github.io/cannabanter/images/Vol_Mute_Off.png",
+				// "data-skip-forward-icon-url": "https://vanquish3r.github.io/cannabanter/images/Sync_FW.png",
+				// "data-skip-backward-icon-url": "https://vanquish3r.github.io/cannabanter/images/Sync_Bk.png",
+				"announce": "false",
+				"instance": "banterlateshow",
+				"announce-events": "false",
+				"announce-four-twenty": "false"
+			};
+			injectRenderScript(
+				"https://vidya.firer.at/playlist.js", // firer.at / sdq.st / best-v-player.glitch.me
+				"bls-videoplayer", youtubeAttributes, document.querySelector("a-scene")
+			);
+		}, delayYT ? 2000 : 0);
+	} else {console.log("enable yt player called");}
 };
 
-// Fire Screen Toggle
-let screenstuffDisabled = true;
-function enableScreenStuff() {
-  if (screenstuffDisabled){
+async function enableScreenStuff() {	
+	// If Karaoke Player exists, Destroy it!
+	if (window.karaokePlayerInstance) { karaokeplayerdisabled = true; console.log("Karaoke Player exists, Destroying it!"); window.cleanupVideoPlayer(); }
+	// If YouTube Player exists, Destroy it!
+	if (window.playlistPlayerInstance) { ytplayerdisabled = true; console.log("YouTube Player exists, Destroying it!"); window.cleanupVideoPlayer(); }
+	setTimeout(() => {
+		if (screenstuffDisabled){
 		screenstuffDisabled = false;
-		console.log("Adding Screen Cast");
+		const firescreenAttributes = {
+			"scale": "1 1 1",
+			"mipmaps": "0",
+			"rotation": "0 0 0",
+			"screen-rotation": "0 0 0",
+			"screen-scale": "0.515 0.515 1",
+			"position": "0 -3 0",
+			"lock-position": "true",
+			"hand-controls": "false",
+			"pixelsperunit": "1600",
+			"castmode": "true",
+			"backdrop": "false",
+			"disable-rotation": "true",
+			"announce": "false",
+			"announce-events": "false",
+			"announce-420": "false",
+			"volume": "0.25",
+			"width": "1920",
+			"height": "1080",
+			"screen-position": "0 0 0",
+			"website": websiteurl
+		};
 		const firescreen = document.createElement("script");
 		firescreen.id = "bls-firescreen";
-		firescreen.setAttribute("scale", "1 1 1");
-		firescreen.setAttribute("rotation", "0 0 0");
-		firescreen.setAttribute("screen-rotation", "0 0 0");
-		firescreen.setAttribute("screen-scale", "0.515 0.515 1");
-		firescreen.setAttribute("position", "0 -3 0");
-		firescreen.setAttribute("lock-position", "true");
-		firescreen.setAttribute("mipmaps", "0");
-		firescreen.setAttribute("pixelsperunit", "1600");
-		firescreen.setAttribute("castmode", "true");
-		firescreen.setAttribute("backdrop", "false");
-		firescreen.setAttribute("disable-rotation", "true");
-		firescreen.setAttribute("hand-controls", "false");
-		firescreen.setAttribute("announce", "false");
-		firescreen.setAttribute("announce-events", "false");
-		firescreen.setAttribute("announce-four-twenty", "false");
-		firescreen.setAttribute("volume", "0.25");
-		firescreen.setAttribute("width", "1920");
-		firescreen.setAttribute("height", "1080");
-		firescreen.setAttribute("screen-position", "0 0 0");
-		firescreen.setAttribute("website", websiteurl);
 		firescreen.setAttribute("src", "https://firer.at/scripts/firescreenv2.js");
+		Object.entries(firescreenAttributes).forEach(([key, value]) => { firescreen.setAttribute(key, value); });
 		document.querySelector("a-scene").appendChild(firescreen);
-		if (websiteurl.includes("hyperbeam.com/i/")) {
-			setTimeout(async () => { 
-				let theBrowserthingy = await lateshowscene.Find(`MyBrowser2`);
-				let thebrowserpart = theBrowserthingy.GetComponent(BS.ComponentType.BanterBrowser);
-				thebrowserpart.RunActions(JSON.stringify({"actions": [{ "actionType": "runscript","strparam1": "const checkbox = document.querySelector(`.p-checkbox-box[role='checkbox']`); const joinButton = document.querySelector('.footer_3Yiou .joinBtn_1TAU6'); if (checkbox) checkbox.click(); if (joinButton) { const observer = new MutationObserver(() => { if (!joinButton.classList.contains('p-disabled')) { joinButton.click(); observer.disconnect(); setTimeout(() => { const skipButton = document.querySelector('.dialog-secondary-btn'); if (skipButton) skipButton.click(); }, 3000); } }); observer.observe(joinButton, { attributes: true, attributeFilter: ['class'] }); }" }]}));
-				setTimeout(async () => {
-					thebrowserpart.RunActions(JSON.stringify({"actions": [{ "actionType": "runscript","strparam1": "var fullscreenButton = document.querySelector(`.p-button.p-component.tu-button.btn-tertiary.btn_2YRyp svg path[d^='M3 3h6.429']`); if (fullscreenButton) { fullscreenButton.closest('button').click(); } setTimeout(async () => { var chatButton = document.querySelector(`.p-button.p-component.tu-button.btn-tertiary.fsChatBtn_2cCyy svg path[d^='M22 22h-2V2h2v20zM2 11h12.17']`); if (chatButton) { chatButton.closest('button').click(); } }, 3500);" }]}));
-				}, 5000);
-			}, 3000);
 		}
-  }
+	}, 2500);
 	console.log("Screen Stuff enabled: " + screenstuffDisabled);
 };
 
-// Karaoke Player Toggle
-let karaokeplayerdisabled = true;
-  function enableKaraokePlayer() {
-  if (karaokeplayerdisabled){
-    console.log("karaoke player enabling");
-    karaokeplayerdisabled = false;
-    const videoplayer = document.createElement("script");
-		videoplayer.id = "bls-karaokeplayer";
-		videoplayer.setAttribute("scale", "1 1 1");
-		videoplayer.setAttribute("mip-maps", "0");
-		videoplayer.setAttribute("rotation", "0 0 0");
-		videoplayer.setAttribute("position", "0 -3 0");
-		videoplayer.setAttribute("hand-controls", "true");
-		videoplayer.setAttribute("button-position", "0 3.05 -1.1");
-		videoplayer.setAttribute("volume", "10");
-		videoplayer.setAttribute("button-rotation", "0 0 0");
-		videoplayer.setAttribute("button-scale", "1.3 1.3 1.3");
-		videoplayer.setAttribute("singer-button-position", "0 -10 0");
-		videoplayer.setAttribute("singer-button-rotation", "0 180 0");
-		// videoplayer.setAttribute("singer-button-scale", "1.5 1.5 1.5");
-	  	videoplayer.setAttribute("spatial", "false");
-		// videoplayer.setAttribute("spatial-min-distance", "1");
-		// videoplayer.setAttribute("spatial-max-distance", "1000");
-		videoplayer.setAttribute("playlist", "");
-		videoplayer.setAttribute("announce", "false");
-	  	videoplayer.setAttribute("announce-events", "false");
-		// videoplayer.setAttribute("data-playlist-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Playlist.png?v=1713028119937");
-		// videoplayer.setAttribute("data-vol-up-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/VolUp.png?v=1713028119640");
-		// videoplayer.setAttribute("data-vol-down-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/VolDown.png?v=1713028119279");
-		// videoplayer.setAttribute("data-mute-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Mute.png?v=1713028120228");
-		// videoplayer.setAttribute("data-skip-forward-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Forward.png?v=1713028118642");
-		// videoplayer.setAttribute("data-skip-backward-icon-url", "https://cdn.glitch.global/69f02c8f-d538-43b7-9c66-5d3973208d79/Backwardsd.png?v=1713028118986");
-		videoplayer.setAttribute("src", "https://vidya.sdq.st/karaoke.js"); // https://best-v-player.glitch.me/karaoke.js
-    document.querySelector("a-scene").appendChild(videoplayer);
-  } else {console.log("enable karaoke player called");}
+async function enableKaraokePlayer() {	// If Browser already exists, DESTROY IT!
+	var browser = await BS.BanterScene.GetInstance().Find('MainParentObject2');
+	if (browser) { console.log("Browser2 Found, Removing it!"); cleanupFireScreenV2(2); screenstuffDisabled = true; }
+	// If YouTube Player exists, Destroy it!
+	let delayYT = false;
+	if (window.playlistPlayerInstance) { delayYT = true; ytplayerdisabled = true; console.log("YouTube Player exists, Destroying it!"); window.cleanupVideoPlayer(); }
+	if (karaokeplayerdisabled){ karaokeplayerdisabled = false;
+		setTimeout(() => {  
+			console.log("karaoke player enabling");
+			const karaokeAttributes = {
+				"scale": "1 1 1",
+				"mip-maps": "0",
+				"rotation": "0 0 0",
+				"position": "0 -3 0",
+				"hand-controls": "true",
+				"button-position": "0 3.05 -1.1",
+				"volume": "10",
+				"button-rotation": "0 0 0",
+				"button-scale": "1.3 1.3 1.3",
+				"singer-button-position": "0 -10 0",
+				"singer-button-rotation": "0 180 0",
+				// "singer-button-scale": "1.5 1.5 1.5",
+				"spatial": "false",
+				// "spatial-min-distance": "1",
+				// "spatial-max-distance": "1000",
+				// "data-playlist-icon-url": "https://vanquish3r.github.io/cannabanter/images/Playlist.png",
+				// "data-vol-up-icon-url": "https://vanquish3r.github.io/cannabanter/images/Vol_Up.png",
+				// "data-vol-down-icon-url": "https://vanquish3r.github.io/cannabanter/images/Vol_Dn.png",
+				// "data-mute-icon-url": "https://vanquish3r.github.io/cannabanter/images/Vol_Mute_Off.png",
+				// "data-skip-forward-icon-url": "https://vanquish3r.github.io/cannabanter/images/Sync_FW.png",
+				// "data-skip-backward-icon-url": "https://vanquish3r.github.io/cannabanter/images/Sync_Bk.png",
+				"playlist": "",
+				"announce": "false",
+				"announce-events": "false",
+				"announce-four-twenty": "false"
+			};
+			injectRenderScript(
+				"https://vidya.firer.at/karaoke.js", // firer.at / sdq.st / best-v-player.glitch.me
+				"bls-karaokeplayer", karaokeAttributes, document.querySelector("a-scene")
+			);
+		}, delayYT ? 2000 : 0);
+	} else {console.log("enable karaoke player called");}
 };
 
-// Fire Tablet
-let screenPortableDisabled = true;
-function enableScreenThingy() {
+async function enableScreenThingy() {
   if (screenPortableDisabled){ screenPortableDisabled = false;
-   setTimeout(() => { 
 	console.log("Adding Fire Tablet");
+	const firescreenAttributes = {
+		"scale": "0.7 0.7 1",
+		"mipmaps": "0",
+		"rotation": "0 0 0",
+		"position": "4.2 0.609 -15.2",
+		"pixelsperunit": "1200",
+		"width": "1280",
+		"height": "720",
+		"announce": "false",
+		"announce-events": "false",
+		"announce-420": "false",
+		"volume": "0.25",
+		"backdrop": "true",
+		"hand-controls": "true",
+		"custom-button01-url": "https://banterlateshow.com/0-0-shownotes-0-0.txt",
+		"custom-button01-text": "BLS Show Notes",
+		"custom-button02-url": "https://banterlateshow.com/darwinawards.html",
+		"custom-button02-text": "Darwin Awards",
+		"custom-button03-url": "https://banterlateshow.glitch.me/cag-shownotes.txt",
+		"custom-button03-text": "GLITCH Show Notes",	   
+		"custom-button04-url": "https://banterlateshow.com",
+		"custom-button04-text": "Banter Late Show",
+		"website": otherwebsiteurl
+	};
 	const firescreen = document.createElement("script");
 	firescreen.id = "bls-firetablet";
-	firescreen.setAttribute("scale", "0.7 0.7 1");
-	firescreen.setAttribute("rotation", "0 0 0");
-	firescreen.setAttribute("position", "4.2 0.609 -15.2");
-	firescreen.setAttribute("mipmaps", "0");
-	firescreen.setAttribute("pixelsperunit", "1200");
-	firescreen.setAttribute("width", "1280");
-	firescreen.setAttribute("height", "720");
-	firescreen.setAttribute("announce", "false");
-	firescreen.setAttribute("announce-events", "false");
-	firescreen.setAttribute("volume", "0.25");
-   	firescreen.setAttribute("backdrop", "true");
-	firescreen.setAttribute("hand-controls", "true");
-	firescreen.setAttribute("custom-button01-url", "https://banterlateshow.com/0-0-shownotes-0-0.txt");
-	firescreen.setAttribute("custom-button01-text", "BLS Show Notes");
-	firescreen.setAttribute("custom-button02-url", "https://banterlateshow.com/darwinawards.html");
-	firescreen.setAttribute("custom-button02-text", "Darwin Awards");
-	firescreen.setAttribute("custom-button03-url", "https://banterlateshow.glitch.me/cag-shownotes.txt");
-	firescreen.setAttribute("custom-button03-text", "CAG Show Notes");
-	//firescreen.setAttribute("custom-button04-url", "https://bls.firer.at/shownotes.html");
-	//firescreen.setAttribute("custom-button04-text", "firer.at shownotes");
-	firescreen.setAttribute("custom-button04-url", "https://banterlateshow.com");
-	firescreen.setAttribute("custom-button04-text", "Banter Late Show");
-	firescreen.setAttribute("website", otherwebsiteurl);
 	firescreen.setAttribute("src", "https://firer.at/scripts/firescreenv2.js");
+	Object.entries(firescreenAttributes).forEach(([key, value]) => { firescreen.setAttribute(key, value); });
 	document.querySelector("a-scene").appendChild(firescreen);
-   }, 5000); 
   }
     console.log("Fire Tablet enabled");
-
 }
 
-setTimeout(() => { somerandomStartActions(); }, 5000);
+setTimeout(() => { somerandomStartActions(); }, 1000);
