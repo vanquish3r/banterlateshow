@@ -1,139 +1,95 @@
-VR Late Show #73 September 21, 2025
+Σncryt3d VRChat Event Host Guide
+Version 1.4 – Last updated: September 8, 2025
 
-=> Opening Videos - 10 mins
-=> Socials & Picture - 5 mins
-=> Community Spotlight - 5 mins
-=> National Days - 5 mins
-=> Heckler Intro - 1 min
-=> Darwin Award - 5 mins
-=> Hockey Break w/Bigjon - 10-15 mins
-=> Random Key Giveaway - 5 mins
-=> Improv Game - 15-20 mins
-=> Top Ten Kitty - 5-10 mins
-=> Promote Event Host Event - 5 mins
-=> Sell It In A Minute - 5 mins
-=> Top Ten Jon - 5-10 mins
-=> Hot Takes - 5-10 mins
-=> Random Key Giveaway - 5 mins
-=> Jon Rags On Kitty - 5 mins
-=> Virtual Prizes - 5 mins
-=> Picture - 5 mins
-=> Divine Song - 5 mins
----
-National Days
+Table of Contents
+ • Quick Start Checklist
+ • Event Setup
+ • Starting Your Event
+ • Ending Your Event
+ • Comfort Settings & Participant Tools
+ • Troubleshooting and How-To’s
+ • Roles at a Glance
+ • Upcoming Links
 
-* National Chai Off
-* National New York Day
-* National Pecan Cookie Day 
-* National Wife Appreciation Day
----
-Hockey Break
+This guide is here to help you run smooth, secure, and engaging events in VRChat. It walks you through everything from setup and promotion to moderation and wrap-up. Setting clear expectations, dealing with tech issues early, and promoting your event in the right places will help reduce confusion and increase turnout.
+The goal is to keep things inclusive, well-managed, and fun, while giving people the freedom to enjoy the experience in their own way.
 
-When people talk about the “Original Six” in hockey, they’re talking about the six teams that made up the NHL from 1942 to 1967—a full 25 years before the league expanded.
+Quick Start Checklist
+ ✅ Calendar invites posted (Discord & VRChat)
+ ✅ Group+ instance created under Σncryt3d
+ ✅ Mic/audio tested
+ ✅ Co-host confirmed (if possible)
+ ✅ Welcome message and rules ready
+ ✅ Mod support lined up (if needed)
+---
+1
+Event Setup
+- Create a calendar invite in Discord. If it’s a recurring event, set it to repeat. Most events should aim for around 60 minutes, unless it’s something bigger like a movie night, game marathon, or the Late Show.
+- Create a matching invite in the VRChat calendar. Right now, each event has to be made manually until recurring events are supported. If you want to add an image to your VRC event and you don't have VRChat+ just message @captndan @discordkitty or @dutch jones with your banner you want to add and we will add it to your event. 
+- Posting in both calendars helps avoid overlap and gives your event visibility inside and outside of VRChat.
+- Share your event in the appropriate event channel on Discord, and give it a final push in the general channel about 5–15 minutes before it starts.
+- About five minutes before go-time, create your Group+ instance under the Σncryt3d group.
+- Test your mic, audio, and VR settings ahead of time so things don’t break mid-event.
+- If you can, bring in a co-host to help manage the flow or take over if something comes up.
+- Moderators and admins are usually around if you need help with moderation. Just ask. The instance owner will have the ability to moderate their event.
+---
+2
+Starting Your Event
+- Welcome everyone and set a friendly, respectful tone.
+- Let people know what to expect. Give a quick overview of the plan, like:
+ “We’ll start with introductions, then move into the activity or discussion, and finish with a closing.”
+- If the event needs rules, explain them early. Remind people to respect each other, avoid trolling, and not interrupt. This is especially important in interactive events like improv or Lean On Me.
+- Invite people to engage however they’re most comfortable. They can participate, talk, play, share, or just listen and hang out.
+- When new folks join, take a moment to welcome them, explain what’s going on, and invite them to join in. It helps them feel included and keeps things running smoothly.
+- Handling Takeover Attempt. If someone tries to run the event their own way, politely acknowledge their input but set clear boundaries. For example: “I appreciate your ideas, but I’d like to keep things on track with the plan for today’s event. Please sit back, relax, and enjoy as a participant.”
+---
+3
+Ending Your Event
+- Give a clear cue when the event is wrapping up so no one is left wondering what to do.
+- Suggest next steps, like other events happening later or regular hangout worlds they can jump into.
+- Be mindful of the time. Try to finish before the next scheduled event. If possible, drop a portal or point people to where they can go next.
+- Sample wrap-up line:
+ “That’s the end of the event, but if you’d like to keep hanging out, here are a few options...”
+- After the event, take a few minutes to note what worked and what didn’t. This helps you tweak things for next time. If you had a co-host, check in with them for feedback too.
 
-Those six were:
-*Montreal Canadiens – the oldest team, founded in 1909, with the most Stanley Cups in history.
-*Toronto Maple Leafs – their rivals, who haven’t won since 1967, but hey, history counts and they're still bigger winners than I am.
-*Boston Bruins – the first American NHL team, founded in 1924.
-*Chicago Blackhawks –  1926, with one of the most iconic logos in sports.
-*Detroit Red Wings – Hockeytown, USA. Known for legends like Gordie Howe and the octopus tradition. octopus was thrown on the ice each arm representing each of the wins it used to take to win the stanley cup 
-*New York Rangers – also founded in 1926, “the Broadway Blueshirts.”
+⭐ Remember: You don’t have to be perfect, just present. Your job is to create a welcoming space, and the community appreciates your effort. If something goes off track, just adapt and keep going.
+---
+4
+Comfort Settings and Participant Tools
+Give these reminders early on to help everyone feel more in control of their space:
+- Show how to use earmuff mode and adjust sound radius.
+- Explain how to control individual volume levels, mute, or turn people up/down.
+- Encourage use of the Moderation tab for personal safety (block, mute, report).
 
-These six clubs built the foundation of the modern NHL. They were the only teams for a whole generation of fans, which is why you still hear so much about them today—even with 32 teams in the league now.
+If your event doesn’t allow avatar powers or sound effects, make that clear from the start. Give one warning if needed, and if the issue continues, remove the person.
 
-now with history out of the way on to today in the nhl the preseason has started 
+If side conversations get loud or off-topic, gently bring the focus back or ask folks to move to a quieter spot if it’s not related to the event.
+---
+5
+Troubleshooting and How-To’s
+Full instructional videos are available in the Host Hub on Discord.
+Here are some common issues and quick fixes:
+- Mic or audio not working?
+ Check your input settings in VRChat and Windows. Try switching mics or reselecting it in the VRChat menu.
+- Can’t hear others?
+ Make sure earmuff mode is off and your sound radius is set correctly.
+- Not sure where to find something?
+ Use the VRChat menu to access Settings or Safety, or ask a mod or co-host to help.
 
-Each of the 32 NHL teams will play 82 regular-season games in 2025-26. 
-That works out to a total of 1,312 regular-season games across the league. 
+This section should include quick guidance on:
+ • Common mic and audio issues
+ • How to use VRChat’s UI tools
+ • Where to find help or settings during the event
+ • Moderation via the group
+Feel free to expand this section based on the needs of your specific group or event style.
 ---
-NHL
-Utah finaly has a name Utah Mammoth
-Dallas Stars vs. St. Louis Blues — September 20, 2025
-Result: Stars won 2-1 in a shootout
-New York Rangers vs. New Jersey Devils — September 21, 2025
-Result: Rangers won 5-3 in Newark.
- NY Rangers @ New Jersey Devils
- Florida@ Nashville 
- Toronto @ Ottawa
- Colorado vs. Utah @ Denver
- Minnesota @ Winnipeg
- St. Louis @ Columbus
- Washington @ Boston
- Anaheim vs. Los Angeles @ Ontario 
- Philadelphia @ NY Islanders
- Calgary  @ Edmonton
- Vancouver @ Seattle
- Vegas @ San Jose
-Utah @ Colorado
----
-Kitty Top Ten List
-
-Top 10 Unintentionally Hilarious Taylor Swift Moments That Broke the Internet (and Possibly Space-Time)
-
-1. Taylor vs. The Chair (Eras Tour boss battle)
-Imagine you're serving Vigilante Sht in thigh-high boots, about to do a sultry sit… and the chair disappears. Did she fall? Did she flinch? No. She just hovered like a broken Sims character and moved on like nothing happened. The chair filed for emotional damages.
----
-2. “No, it’s Becky.” – The meme that refused to die
-A Tumblr user posts a pic of Taylor saying it's “Becky who died from snorting marijuana once.” Internet: LOL. Taylor: Wears a “No, it’s Becky” shirt in public. The meme community ascended. Becky never recovered.
----
-3. Taylor tries to walk backwards out of a gym like a cursed NPC
-Paparazzi? She doesn’t know them. Taylor walked backwards out of a building, flanked by security, like someone trying to uninstall themselves from a glitchy mission in Grand Theft Auto. It’s still unclear if this was escape or performance art.
----
-4. “Not to be dramatic but I would die for that squirrel”
-She said this ONCE. Just ONCE. And the internet adopted it like it was Shakespeare. If you’ve never dramatically whispered this while watching wildlife, are you even doing life right?
----
-5. Drunk Taylor at the 2019 VMAs: A spiritual experience
-Champagne Taylor was front row, vibing so hard it looked like she was at a Lizzo-themed sleepover. The pointing. The swaying. The unfiltered joy. She was the afterparty. MTV has never been that fun since.
----
-6. The cat filter Zoom call that never happened (but should’ve)
-Okay yes, this one’s technically fan fiction — but someone edited Taylor into the viral “I’m not a cat” Zoom clip and everyone believed it was real for a second. Probably because if anyone would accidentally turn into a cat mid-meeting and roll with it, it’s her.
----
-7. "Bleachella" 2016: the birth of chaotic neutral Taylor
-Bleached hair. Dark lipstick. Random dance battles. Potentially summoning Tom Hiddleston. She showed up to the Met Gala looking like a Final Fantasy villain and left with a whole subplot that made Tumblr implode.
----
-8. Taylor in Cats: a serious actress who also meows
-She trained for this. She studied the feline arts. She purred. She crawled. She wore fur and heels. The movie tanked but Taylor’s milk-licking scene lives rent-free in our brains like a cursed TikTok.
----
-9. Diet Coke + Cats = Chaos
-She takes one sip of Diet Coke and kaboom — a glitter explosion of kittens. This ad was not supposed to be hilarious, but it ended up looking like someone accidentally leaned on the “spawn kitten” button too long. 10/10.
----
-10. When she carried a framed photo of her Kanye moment to the VMAs
-Taylor, in full sparkly gown, handed Kanye a Vanguard Award... while holding a photo of him interrupting her in 2009. No words. Just pettiness in picture form. Art. Iconic. Petty levels: platinum.
----
-Jon Top Ten List
-
-top ten history facts about the nhl 
-
-1.The Birth of Professional Hockey (1909)
-The Montreal Canadiens were founded in 1909, making them the oldest continuously operating professional hockey team. They helped set the foundation for the NHL when it formed in 1917.
----
-2.First Stanley Cup (1893)
-The Stanley Cup was first awarded in 1893 to the Montreal Hockey Club. It’s the oldest professional sports trophy in North America.
----
-3.Wayne Gretzky Breaks Records
-Gretzky, “The Great One,” retired in 1999 holding 61 NHL records, including most career points (2,857). Many of his records still stand today.
----
-4.Expansion to the West (1967)
-The NHL doubled in size from six to twelve teams, introducing teams like the Philadelphia Flyers and Pittsburgh Penguins, starting the modern expansion era.
----
-5.First American NHL Team
-The Boston Bruins joined the NHL in 1924, becoming the first U.S.-based team in the league’s history.
----
-6.The Miracle on Ice (1980)
-At the Lake Placid Olympics, the U.S. amateur team defeated the heavily favored Soviet Union team, creating one of hockey’s most legendary moments.
----
-7.Introduction of the Shootout (2005–06)
-After the 2004–05 lockout, the NHL added the shootout to break ties in regular-season games, changing strategy and exciting fans.
----
-8.Octopus Overload
-While Detroit fans throwing octopuses is tradition, in 1995, a Red Wings fan threw 12 octopuses onto the ice at once. The arena staff had to call a “time out” to clear them all. Imagine being the Zamboni driver that day.
----
-9.Women’s Hockey Recognition
-The NHL has increasingly partnered with women’s hockey, hosting events like the NHL All-Star Skills Women’s Game to honor pioneers in the sport.
----
-10.The First Winter Classic (2008)
-The NHL hosted the first Winter Classic outdoors at Ralph Wilson Stadium in Buffalo. This annual outdoor game has become one of the league’s most popular traditions, blending hockey history with modern spectacle. 
-
---------------------------------------------------------
-
-
+6
+Roles at a Glance
+Understanding who does what makes hosting easier and smoother. Here's a quick breakdown:
+- Host
+ Runs the event, creates the Group+ instance, sets the tone, explains the rules, and guides the flow.
+ Note: The host who creates the instance or portal automatically has moderation permissions for that instance.
+- Co-Host
+ Assists with managing the event. Can greet late joiners, help answer questions, redirect side conversations, or take over if the host disconnects or needs support.
+- Moderator/Admin
+ Handles rule enforcement, moderation tools, technical support, or escalations during the event if needed.
