@@ -1,95 +1,110 @@
-Σncryt3d VRChat Event Host Guide
-Version 1.4 – Last updated: September 8, 2025
+The VR Late Show Episode #74
+September 28th, 2025
 
-Table of Contents
- • Quick Start Checklist
- • Event Setup
- • Starting Your Event
- • Ending Your Event
- • Comfort Settings & Participant Tools
- • Troubleshooting and How-To’s
- • Roles at a Glance
- • Upcoming Links
+=> Opening Act - Bronina Directed Video - 20 mins
+(Bronina will come on stage to intro it, no voice over intro)
+=> Socials & Picture - 5 mins
+=> Community Spotlight - 5 mins
+=> National Days - 5 mins
+=> Heckler Intro & Winner Picked - 1 min
+=> Grinds Bronina's Gears - 5-10 mins
+=> Darwin Award - 5 mins
+=> Elysium Trials Key Giveaway - 5 mins
+=> Kitty's Top Ten - 5-10 mins
+=> Make Us Laugh - 5-10 mins
+=> Weird Things Bronina Found On The Internet - 5-10 mins
+=> Events Talk 5-10 mins
+=> VR Horoscopes - 5-10 mins
+=> Sell It In A Minute - 5 mins
+=> Elysium Trials Key Giveaway - 5 mins
+=> One Person Game - 5-10 mins
+=> Virtual Song Prize - 2 mins
+=> Picture - 5 mins
+=> Divine Song - 5 mins
+=> After Party/SongPop in Banter
 
-This guide is here to help you run smooth, secure, and engaging events in VRChat. It walks you through everything from setup and promotion to moderation and wrap-up. Setting clear expectations, dealing with tech issues early, and promoting your event in the right places will help reduce confusion and increase turnout.
-The goal is to keep things inclusive, well-managed, and fun, while giving people the freedom to enjoy the experience in their own way.
-
-Quick Start Checklist
- ✅ Calendar invites posted (Discord & VRChat)
- ✅ Group+ instance created under Σncryt3d
- ✅ Mic/audio tested
- ✅ Co-host confirmed (if possible)
- ✅ Welcome message and rules ready
- ✅ Mod support lined up (if needed)
+Game Key Winners: Kaymerd, Oozyrat, Nystx, CrypticWoodworker
 ---
-1
-Event Setup
-- Create a calendar invite in Discord. If it’s a recurring event, set it to repeat. Most events should aim for around 60 minutes, unless it’s something bigger like a movie night, game marathon, or the Late Show.
-- Create a matching invite in the VRChat calendar. Right now, each event has to be made manually until recurring events are supported. If you want to add an image to your VRC event and you don't have VRChat+ just message @captndan @discordkitty or @dutch jones with your banner you want to add and we will add it to your event. 
-- Posting in both calendars helps avoid overlap and gives your event visibility inside and outside of VRChat.
-- Share your event in the appropriate event channel on Discord, and give it a final push in the general channel about 5–15 minutes before it starts.
-- About five minutes before go-time, create your Group+ instance under the Σncryt3d group.
-- Test your mic, audio, and VR settings ahead of time so things don’t break mid-event.
-- If you can, bring in a co-host to help manage the flow or take over if something comes up.
-- Moderators and admins are usually around if you need help with moderation. Just ask. The instance owner will have the ability to moderate their event.
+National North Carolina Day
+National Drink Beer Day
+National Strawberry Cream Pie Day
+National Gold Star Mother's And Family Day
+National Good Neighbor Day
+National Family Health & Fitness Day
 ---
-2
-Starting Your Event
-- Welcome everyone and set a friendly, respectful tone.
-- Let people know what to expect. Give a quick overview of the plan, like:
- “We’ll start with introductions, then move into the activity or discussion, and finish with a closing.”
-- If the event needs rules, explain them early. Remind people to respect each other, avoid trolling, and not interrupt. This is especially important in interactive events like improv or Lean On Me.
-- Invite people to engage however they’re most comfortable. They can participate, talk, play, share, or just listen and hang out.
-- When new folks join, take a moment to welcome them, explain what’s going on, and invite them to join in. It helps them feel included and keeps things running smoothly.
-- Handling Takeover Attempt. If someone tries to run the event their own way, politely acknowledge their input but set clear boundaries. For example: “I appreciate your ideas, but I’d like to keep things on track with the plan for today’s event. Please sit back, relax, and enjoy as a participant.”
----
-3
-Ending Your Event
-- Give a clear cue when the event is wrapping up so no one is left wondering what to do.
-- Suggest next steps, like other events happening later or regular hangout worlds they can jump into.
-- Be mindful of the time. Try to finish before the next scheduled event. If possible, drop a portal or point people to where they can go next.
-- Sample wrap-up line:
- “That’s the end of the event, but if you’d like to keep hanging out, here are a few options...”
-- After the event, take a few minutes to note what worked and what didn’t. This helps you tweak things for next time. If you had a co-host, check in with them for feedback too.
+Darwin Award
+A Slippery Slope 
 
-⭐ Remember: You don’t have to be perfect, just present. Your job is to create a welcoming space, and the community appreciates your effort. If something goes off track, just adapt and keep going.
----
-4
-Comfort Settings and Participant Tools
-Give these reminders early on to help everyone feel more in control of their space:
-- Show how to use earmuff mode and adjust sound radius.
-- Explain how to control individual volume levels, mute, or turn people up/down.
-- Encourage use of the Moderation tab for personal safety (block, mute, report).
+(1960's, Norfolk, UK) The small seaside town at the mouth of the river Yare keeps a modern lifeboat at anchor in the harbour, but the old lifeboat shed is nearby. Its cobbled slipway descended at a 30-degree angle straight into the river. Four hundred yards away, the harbour opens into the North Sea. The next stop is the coast of Holland.
 
-If your event doesn’t allow avatar powers or sound effects, make that clear from the start. Give one warning if needed, and if the issue continues, remove the person.
+I was eight years old, and not afflicted by the degree of supervision that kids endure nowadays. That summer, a bunch of us decided it would be a great wheeze to take a discarded tractor tyre from the dump, and take turns curling up inside it while the others rolled us down the slipway into the river. The name of the game was to struggle out before the tyre reached the water.
 
-If side conversations get loud or off-topic, gently bring the focus back or ask folks to move to a quieter spot if it’s not related to the event.
+This provided several minutes of hysterical fun, until the inevitable happened. All hell broke loose as the lucky winner and the tyre rapidly made their way to open sea. The sight of the big yellow Coast Guard helicopter and its crew saving his ass went some way towards compensating for the pain inflicted upon mine by my dad that evening. 
 ---
-5
-Troubleshooting and How-To’s
-Full instructional videos are available in the Host Hub on Discord.
-Here are some common issues and quick fixes:
-- Mic or audio not working?
- Check your input settings in VRChat and Windows. Try switching mics or reselecting it in the VRChat menu.
-- Can’t hear others?
- Make sure earmuff mode is off and your sound radius is set correctly.
-- Not sure where to find something?
- Use the VRChat menu to access Settings or Safety, or ask a mod or co-host to help.
+Kitty's Top Ten
+Top 10 Things That Instantly Tell You a Person Is About to Ruin Your Day
+(Now with 40% more emotional scarring and passive aggression)
 
-This section should include quick guidance on:
- • Common mic and audio issues
- • How to use VRChat’s UI tools
- • Where to find help or settings during the event
- • Moderation via the group
-Feel free to expand this section based on the needs of your specific group or event style.
+10. They start a sentence with “Not to be rude, but…”
+Then proceed to be so rude your ancestors flinch.
 ---
-6
-Roles at a Glance
-Understanding who does what makes hosting easier and smoother. Here's a quick breakdown:
-- Host
- Runs the event, creates the Group+ instance, sets the tone, explains the rules, and guides the flow.
- Note: The host who creates the instance or portal automatically has moderation permissions for that instance.
-- Co-Host
- Assists with managing the event. Can greet late joiners, help answer questions, redirect side conversations, or take over if the host disconnects or needs support.
-- Moderator/Admin
- Handles rule enforcement, moderation tools, technical support, or escalations during the event if needed.
+9. They say, “Let me play devil’s advocate,” and then defend tax fraud, NFTs, and their cousin Greg who definitely did it.
+
+8. They mention their podcast three times before you even learn their name.
+Spoiler: It’s called "Unfiltered Alpha Energy." No one asked.
+
+7. They claim “I’m just brutally honest,”
+Then give unsolicited feedback on your face, life choices, and aura.
+
+6. They whisper “Trust me” before touching exposed wires, your steering wheel, or your feelings.
+---
+5. They send you a calendar invite for a “quick 15-minute sync” that lasts long enough for your coffee to go cold and your will to live to evaporate.
+
+4. They clap when the plane lands and stand up before the seatbelt sign goes off.
+Bonus points if they hit you with their backpack on the way out.
+
+3. They say “It’s giving…”
+But what it’s giving is the energy of someone who microwaves fish at work.
+
+2. They casually say “I’m a Pisces, so you have to forgive me”
+Immediately after keying your car and stealing your emotional support water bottle.
+
+1. They say “Let that sink in,”
+Then physically bring out a porcelain sink and stare at you like you’re the weird one.
+---
+VR Horoscopes
+Aries (Mar 21 – Apr 19)
+You're charging into every new world like a toddler with jet boots. Slow down. Maybe read the controls before body-slamming someone in a karaoke lobby.
+---
+Taurus (Apr 20 – May 20)
+You spent 90 minutes decorating your virtual apartment... then your roommate teleported in and rearranged everything. Rage level: maximum. Stars: indifferent.
+---
+Gemini (May 21 – Jun 20)
+You’ve joined 12 worlds, made 8 friends, started 3 drama cycles — and you’ve been online for 45 minutes. The stars say: maybe sit down and pick a personality for the day.
+---
+Cancer (Jun 21 – Jul 22)
+You formed a deep emotional bond with someone wearing a banana avatar. That’s not love. That’s attachment trauma in HD.
+---
+Leo (Jul 23 – Aug 22)
+Yes, your avatar looks amazing. Yes, you made an entrance. No, nobody asked for your 27-minute monologue about your “creative process.” This is VR, not your memoir.
+---
+Virgo (Aug 23 – Sep 22)
+You spent 20 minutes cleaning your VR inventory, alphabetizing potions, and labeling your weapons. Congratulations — nothing actually improved.
+---
+Libra (Sep 23 – Oct 22)
+You’re still in the spawn zone debating which world to go to. It’s been two hours. You’ve had three existential crises. No one cares. Pick a damn portal.
+---
+Scorpio (Oct 23 – Nov 21)
+You walked into a horror world just to watch everyone else scream. You are the villain. And yes, the stars fear you. As they should.
+---
+Sagittarius (Nov 22 – Dec 21)
+You tried speedrunning a dungeon, accidentally married a goat NPC, and now the guild leader is demanding a duel. Meanwhile, your loot chest is full of expired tacos. Stars say: this is your life now, enjoy it.
+---
+Capricorn (Dec 22 – Jan 19)
+You opened a spreadsheet... in VR. You’ve been taking meeting notes in a tavern. You are everything that’s wrong with productivity culture. Take a vacation. Touch some virtual grass.
+---
+Aquarius (Jan 20 – Feb 18)
+You’re building a philosophical debate room where every chair floats and nothing has a floor. Everyone’s confused. You’re proud. We get it — you’re deep.
+---
+Pisces (Feb 19 – Mar 20)
+You fell in love in a VR hot tub, wrote them a poem in the world chat, and then they turned into a corgi and flew away. Now you're staring at the virtual sky whispering, "Was any of it real?" Spoiler: it wasn’t. But your pain is beautiful.
