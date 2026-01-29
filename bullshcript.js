@@ -4,7 +4,7 @@ let websiteurl = "https://vdo.ninja/?view=banterlateshow&bitrate=20000&codec=vp9
 // https://screen.sdq.st:8443/?room=banterlateshow
 // https://cannabanter.firer.at/embed.html?420
 
-let otherwebsiteurl = "https://banterlateshow.com/"; // Fire Tablet Homepage
+let otherwebsiteurl = "https://lateshow.bant.ing/"; // Fire Tablet Homepage
 
 async function somerandomStartActions() {
 	const waitingForUnity = async () => { while (!lateshowscene.unityLoaded) { await new Promise(resolve => setTimeout(resolve, 500)); } };
@@ -195,13 +195,13 @@ async function enableScreenThingy() {
 		"volume": "0.25",
 		"backdrop": "true",
 		"hand-controls": "true",
-		"custom-button01-url": "https://banterlateshow.com/0-0-shownotes-0-0.txt",
+		"custom-button01-url": "https://vanquish3r.github.io/banterlateshow/0-0-shownotes-0-0.txt",
 		"custom-button01-text": "BLS Show Notes",
-		"custom-button02-url": "https://banterlateshow.com/darwinawards.html",
+		"custom-button02-url": "https://vanquish3r.github.io/banterlateshow/darwinawards.html",
 		"custom-button02-text": "Darwin Awards",
-		"custom-button03-url": "https://banterlateshow.glitch.me/cag-shownotes.txt",
-		"custom-button03-text": "GLITCH Show Notes",	   
-		"custom-button04-url": "https://banterlateshow.com",
+	/*	"custom-button03-url": "https://banterlateshow.glitch.me/cag-shownotes.txt",
+		"custom-button03-text": "GLITCH Show Notes",	   */
+		"custom-button04-url": "https://lateshow.bant.ing/",
 		"custom-button04-text": "Banter Late Show",
 		"website": otherwebsiteurl
 	};
