@@ -107,7 +107,7 @@ async function enableScreenStuff() {
 			"mipmaps": "0",
 			"rotation": "0 0 0",
 			"screen-rotation": "0 0 0",
-			"screen-scale": "0.515 0.515 1",
+			"screen-scale": "0.68 0.68 1",
 			"position": "0 -3 0",
 			"lock-position": "true",
 			"hand-controls": "false",
