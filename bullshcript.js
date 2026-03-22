@@ -1,4 +1,4 @@
-let youtubePlaylist = `PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_`;
+let youtubePlaylist = `PLC7QdSXG8EDbMHj-XVfE4Xdok6QwUMKGb`; // OLD - PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_
 // let otherwebsiteurl = "https://www.youtube.com/playlist?list=PLgaFNC_I_ZklXd_bvyiLyQAKlwaUMoMdR";  // Small Screen Up Stairs
 let otherwebsiteurl = "https://lateshow.bant.ing/";  // Small Screen Up Stairs
 var websiteurl = "https://vdo.ninja/?view=banterlateshow&bitrate=20000&codec=vp9&stereo"; // Fire Screen Placeholder
@@ -62,7 +62,7 @@ async function enableVideoPlayer() {
 				"spatial": "false",
 				// "spatial-min-distance": "1",
 				// "spatial-max-distance": "1000",
-				"playlist": "PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_",
+				"playlist": "PLC7QdSXG8EDbMHj-XVfE4Xdok6QwUMKGb",
 				"announce": "false",
 				"instance": "blsvidyainstance",
 				"announce-events": "false",
