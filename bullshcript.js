@@ -12,7 +12,7 @@ var websiteurl = "https://vdo.ninja/?view=banterlateshow&bitrate=20000&codec=vp9
   /* UNCOMMENTED THIS TO ENABLE THE KARAOKE PLAYER */
 		// enableKaraokePlayer();
 	/* UNCOMMENTED THIS TO ENABLE FIRE TABLET */
-		enableThePortableFireScreen();
+		// enableThePortableFireScreen();
 
 // Player Toggle's by FireRat
 let ytplayerdisabled = true;
