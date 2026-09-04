@@ -1,7 +1,12 @@
 let youtubePlaylist = `PLC7QdSXG8EDbMHj-XVfE4Xdok6QwUMKGb`; // OLD - PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_
-// let otherwebsiteurl = "https://www.youtube.com/playlist?list=PLgaFNC_I_ZklXd_bvyiLyQAKlwaUMoMdR";  // Small Screen Up Stairs
-let otherwebsiteurl = "https://lateshow.bant.ing/";  // Small Screen Up Stairs
+let otherwebsiteurl = "https://lateshow.bant.ing/";  // Portable Fire Screen
 var websiteurl = "https://vdo.ninja/?view=banterlateshow&bitrate=20000&codec=vp9&stereo"; // Fire Screen Placeholder
+
+// Player Toggle's by FireRat (Moved to the top to avoid TDZ initialization errors)
+let ytplayerdisabled = true;
+let karaokeplayerdisabled = true;
+let screenstuffDisabled = true;
+let screenPortableDisabled = true;
 
 // window.addEventListener("bs-loaded", ()=> {
  	// console.log("Scene loaded");
@@ -13,11 +18,6 @@ var websiteurl = "https://vdo.ninja/?view=banterlateshow&bitrate=20000&codec=vp9
 		// enableKaraokePlayer();
 	/* UNCOMMENTED THIS TO ENABLE FIRE TABLET */
 		 enableThePortableFireScreen();
-
-// Player Toggle's by FireRat
-let ytplayerdisabled = true;
-let karaokeplayerdisabled = true;
-let screenstuffDisabled = true;
 
 /////////////// RENDER SCRIPT LOADER STUFF ///////////////
 async function injectRenderScript(theScriptsURL, TheScriptsName = "UnNamed", attributes = {}, appendTo = document.body) {
@@ -182,7 +182,6 @@ async function enableKaraokePlayer() {
 };
 
 // Fire Tablet
-let screenPortableDisabled = true;
 function enableThePortableFireScreen(announce = false) {
   if (screenPortableDisabled){ screenPortableDisabled = false;
 		console.log("Adding Fire Tablet");
