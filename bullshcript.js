@@ -1,12 +1,13 @@
-let youtubePlaylist = `PLC7QdSXG8EDbMHj-XVfE4Xdok6QwUMKGb`; // OLD - PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_
-let otherwebsiteurl = "https://lateshow.bant.ing/";  // Portable Fire Screen
+var youtubePlaylist = `PLC7QdSXG8EDbMHj-XVfE4Xdok6QwUMKGb`; // OLD - PLC7QdSXG8EDYIqWudXaAsJqMlbZvOaC-_
+// var otherwebsiteurl = "https://www.youtube.com/playlist?list=PLgaFNC_I_ZklXd_bvyiLyQAKlwaUMoMdR";  // Small Screen Up Stairs
+var otherwebsiteurl = "https://lateshow.bant.ing/";  // Small Screen Up Stairs
 var websiteurl = "https://vdo.ninja/?view=banterlateshow&bitrate=20000&codec=vp9&stereo"; // Fire Screen Placeholder
 
-// Player Toggle's by FireRat (Moved to the top to avoid TDZ initialization errors)
-let ytplayerdisabled = true;
-let karaokeplayerdisabled = true;
-let screenstuffDisabled = true;
-let screenPortableDisabled = true;
+// Changed to 'var' to completely prevent any initialization order errors
+var ytplayerdisabled = true;
+var karaokeplayerdisabled = true;
+var screenstuffDisabled = true;
+var screenPortableDisabled = true;
 
 // window.addEventListener("bs-loaded", ()=> {
  	// console.log("Scene loaded");
