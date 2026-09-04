@@ -12,7 +12,7 @@ var websiteurl = "https://vdo.ninja/?view=banterlateshow&bitrate=20000&codec=vp9
   /* UNCOMMENTED THIS TO ENABLE THE KARAOKE PLAYER */
 		// enableKaraokePlayer();
 	/* UNCOMMENTED THIS TO ENABLE FIRE TABLET */
-		// enableThePortableFireScreen();
+		 enableThePortableFireScreen();
 
 // Player Toggle's by FireRat
 let ytplayerdisabled = true;
@@ -58,7 +58,7 @@ async function enableVideoPlayer() {
 				"button-position": "0 3.05 -1.1",
 				"volume": "3",
 				"button-rotation": "0 0 0",
-				"button-scale": "1 1 1",
+				"button-scale": "2 2 2",
 				"spatial": "false",
 				// "spatial-min-distance": "1",
 				// "spatial-max-distance": "1000",
@@ -244,7 +244,3 @@ document.addEventListener('CustomButtonClick', async function(event) {
      // console.log('An unknown button triggered the custom event.');
   }
 });
-
-somerandomStartActions();
-	
-// });
